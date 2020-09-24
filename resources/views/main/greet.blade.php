@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if (session('oauth_error'))
+    {{ session('oauth_error') }}
+@endif
     <div class="container mt-3">
         {!! Form::open(['route' => 'greet', 'method' => 'POST']) !!}
             {{ csrf_field() }}
