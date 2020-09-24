@@ -17,7 +17,7 @@ class CreateGreetsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->comment('ユーザID');
             $table->string('name')->null()->comment('ユーザ名');
-            $table->text('greet')>comment('本文');
+            $table->text('greet')->comment('本文');
             $table->timestamps();
         });
     }
