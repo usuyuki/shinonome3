@@ -67,16 +67,20 @@ class LoginController extends Controller
 
 
 
-        if ($email = $providerUser->getEmail()) {
+        if (is_null($providerUser->token)) {
+            //firstOrCreate→DBにデータが存在する場合は取得し、存在しない場合はDBにデータを登録した上でインスタンスを取得する
+            //第一引数→検索条件のカラム名をキーとした連想配列を入れる,第２引数→データが取得できなかった場合にDBに保存する際に使用
             Auth::login(User::firstOrCreate([
-                'email' => $email
+                'token' => $providerUser->token
             ], [
-                'name' => $providerUser->getName()
-            ]));
+                'name' => $providerUser->nickname,
+                'screen_name' => $providerUser->nickname,
+                
+                ]));
 
             return redirect($this->redirectTo);
         } else {
-            return redirect('/login')->with('oauth_error', 'メールアドレスが取得できませんでした');
+            return redirect('/login')->with('oauth_error', 'トークンが取得できませんでした');
         }
     }
 }
