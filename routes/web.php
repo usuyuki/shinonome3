@@ -25,3 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/greet',[GreetController::class,'showGreetPage'])->name('greet');
 Route::post('/greet',[GreetController::class,'postGreet'])->name('greet');
+
+//socialiteのためのルーティング
+Route::get('/login/{provider}', [LoginController::class,'redirectToProvider']);
+Route::get('login/{provider}/callback', [LoginController::class,'handleProviderCallback']);
