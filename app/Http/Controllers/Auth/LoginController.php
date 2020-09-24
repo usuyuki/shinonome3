@@ -71,6 +71,7 @@ class LoginController extends Controller
 
 
         if (is_null($providerUser->token)) {
+            //トークン取れなかった時
             return redirect('/greet')->with('oauth_error', 'トークンが取得できませんでした');
         } else {
             //firstOrCreate→DBにデータが存在する場合は取得し、存在しない場合はDBにデータを登録した上でインスタンスを取得する
@@ -79,7 +80,8 @@ class LoginController extends Controller
                 'token' => $providerUser->token
             ], [
                 'name' => $providerUser->nickname,
-                'screen_name' => $providerUser->nickname,
+                'nickname' => $providerUser->nickname,
+                'profile_photo_path'=>$providerUser->profile_image_url_https,
                 
                 ]));
 
