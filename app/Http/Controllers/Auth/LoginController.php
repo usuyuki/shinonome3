@@ -81,7 +81,7 @@ class LoginController extends Controller
             ], [
                 'name' => $providerUser->nickname,
                 'nickname' => $providerUser->nickname,
-                'profile_photo_path'=>$providerUser->profile_image_url_https,
+                // 'profile_photo_path'=>$providerUser->profile_image_url_https,
                 
                 ]));
 
