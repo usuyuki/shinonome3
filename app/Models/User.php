@@ -20,9 +20,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'token',
-        'nickname',
+        'twitter_token',
         'profile_photo_path',
+        'twitter_id',
+        'twitter_name',
     ];
 
     /**

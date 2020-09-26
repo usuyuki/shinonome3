@@ -77,10 +77,12 @@ class LoginController extends Controller
             //firstOrCreate→DBにデータが存在する場合は取得し、存在しない場合はDBにデータを登録した上でインスタンスを取得する
             //第一引数→検索条件のカラム名をキーとした連想配列を入れる,第２引数→データが取得できなかった場合にDBに保存する際に使用
             Auth::login(User::firstOrCreate([
-                'token' => $providerUser->token
+                'twitter_token' => $providerUser->token
             ], [
-                'name' => $providerUser->nickname,
-                'nickname' => $providerUser->nickname,
+                'name' => $providerUser->name,
+                'twitter_id' => $providerUser->id,
+                'twitter_name' => $providerUser->nickname, // @abc
+                'profile_photo_path' => $providerUser->avatar_original
                 // 'profile_photo_path'=>$providerUser->profile_image_url_https,
                 
                 ]));
