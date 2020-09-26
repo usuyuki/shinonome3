@@ -4,93 +4,128 @@
         <meta charset="utf-8">
         <title>@yield('title')</title>
         <meta name="description" content="しののめは朝に特化した朝限定のSNSです。">
-        <style>
-        .container {
-        width: 1000px;
-        display: -webkit-flex;
-        display: flex;
-        }
-        /* メインコンテンツ */
-        .main {
-        display: block;
-        width: 660px;
-        margin-right: 20px;
-        background-color: pink;
-        }
-        /* 左サイドバー */
-        .left_sidebar {
-        margin:0 0 0 auto;
-        width: 320px;
-        background-color: green;
-        }
-        .left_sidebar__item {
-        margin-bottom: 20px;
-        }
-        .left_sidebar__item--fixed {
-        position: sticky;
-        margin-bottom: 0;
-        top: 10px;
-        z-index: 1;
-        }
-        /* 右サイドバー */
-        .right_sidebar {
-        width: 320px;
-        background-color: blue;
-        }
-        .right_sidebar__item {
-        margin-bottom: 20px;
-        }
-        .right_sidebar__item--fixed {
-        position: sticky;
-        margin-bottom: 0;
-        top: 10px;
-        z-index: 1;
-        }
 
-            /* .container{
-                width: 1000px;
-                display: -webkit-flex;
-                display: flex;
-            }
-            .rightNavigation{
-                flex: 3;
-                text-align: center;
-                background-color: #888;
-                color: #fff;
-            }
-
-            .leftNavigation{
-                flex: 1;
-                text-align: center;
-                background-color: #888;
-                color: #fff;
-            }
-            .content{
-                text-align: center;
-            } */
-        </style>
     </head>
     <body>
+    <style>
+        .container {
+            display: -webkit-flex;
+            display: flex;
+    -webkit-justify-content: center;
+            /* justify-content: space-around; */
+        }
+
+        /* メインコンテンツ */
+        .main {
+            /* position: absolute; */
+            flex-basis: 838px;
+            height: 1024px;
+            text-align: center;
+            order: 2;/* flexboxの順番*/
+            border: 1px ridge ;
+/* left: 302px;
+top: 0px;             */
+        /* display: block; */
+        /* width: 830px; */
+        /* margin-right: 20px; */
+        /* background-color: pink; */
+        /* align-self: stretch; */
+        }
+
+        /* 左サイドバー */
+        .left_sidebar {
+            /* position: absolute; */
+            flex-basis: 300px;
+            height: 500px;
+            /* left: 0px;
+            top: 0px; */
+
+            
+            /* box-sizing: border-box; */
+            text-align: center;
+            order: 1;/* flexboxの順番*/
+            position: sticky;/* //固定*/
+            top: 0; /*  上部 0px の位置に固定*/
+            /* position: sticky; */
+        /* margin:0 0 0 auto; */
+        /* width: 300px;
+        background-color: green; */
+        /* align-self: stretch; */
+        }
+        .left_sidebar__item {
+        /* margin-bottom: 20px; */
+        position: sticky;
+        }
+
+        /* 右サイドバー */
+        .right_sidebar {
+            /* position: absolute; */
+            flex-basis: 300px;
+            height: 500px;
+            /* left: 1140px;
+            top: 0px; */
+
+
+            /* box-sizing: border-box; */
+            text-align: center;
+            order: 3;/* flexboxの順番*/
+            position: sticky;/* //固定*/
+            top: 0; /*  上部 0px の位置に固定*/
+        /* width: 30em; */
+        /* background-color: blue; */
+        /* align-self: stretch; */
+        }
+        .right_sidebar__item {
+        /* margin-bottom: 20px; */
+        position: sticky;
+        }
+        .profile_photo{
+            border-radius: 50%; 
+            border-width: 2px;
+            border-style: solid;
+            border-color: black;
+            width:56px;
+            object-fit: cover;
+        }
+
+
+       
+        </style>
     <div class="container">
 
+        <!-- 中央 -->
         <main class="main">
             <!-- メインコンテンツ -->
-            @yield('main')
+            @yield('content')
         </main>
 
         <!-- 左サイドバー-->
         <div class="left_sidebar">
             <div class="left_sidebar__item">
             <!-- 中身 -->
-            <p>左サイドバーふれっくす</p>
+            <P>　</P>
+            <P href="{{ url('/greet') }}">
+                <img src="/img/logos/しののめロゴ20200924.png" width=150px height=60px class="logo" alt="しののめのロゴです">
+            </P>
+
+
+            <img class="profile_photo" src="{{ Auth::user()->profile_photo_path }}">
+
+
+            {{ Auth::user()->name }}
+            <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
             @yield('left')
-            </div>
-            <div class="right_sidebar__item sidebar__item--fixed">
-            <!-- 固定・追従させたいエリア -->
-            <p>左サイドバーこてい</p>
+
+            
+
             </div>
         </div>
 
+        
         <!-- 右サイドバー-->
         <div class="right_sidebar">
             <div class="right_sidebar__item">
@@ -98,30 +133,9 @@
             <p>右サイドバーふれっくす</p>
             @yield('right')
             </div>
-            <div class="right_sidebar__item sidebar__item--fixed">
-            <!-- 固定・追従させたいエリア -->
-            <p>右サイドバーこてい</p>
-            </div>
         </div>
 
     </div>
-        <!-- <div class="container">
-        @section('right')
-            <div class="rightNavigation">
-            @yield('right')
-                <p>right</p>
 
-            </div>
-        @section('left')
-            <div class="leftNavigation">
-            @yield('right')
-                <p>left</p>
-
-            </div>
-        @section('content')
-            <div class="content">
-            @yield('content')
-            </div>
-        </div> -->
     </body>
 </html>

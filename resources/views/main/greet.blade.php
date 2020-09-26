@@ -1,4 +1,5 @@
-@extends('layouts.app')
+
+@extends('layouts.shinonomeapp')
 
 @section('content')
 
@@ -9,15 +10,22 @@
         {!! Form::open(['route' => 'greet', 'method' => 'POST']) !!}
             {{ csrf_field() }}
             <div class="row mb-4">
+            
+            
             @guest
+            @section('left')
+            @parents
                 <div class="mx-auto">
                     <a class="btn btn-primary" href="{{ route('login') }}">ログインしてあいさつする</a>
                     <a class="btn btn-primary" href="{{ route('register') }}">新規登録してあいさつする</a>
                 </div>
+            @endsection
             @else
                 {{ Form::text('greet', null, ['class' => 'form-control col-9 mr-auto']) }}
                 {{ Form::submit('あいさつ', ['class' => 'btn btn-primary col-2']) }}
-                @endguest
+            
+            @endguest
+
             </div>
             {{-- エラー表示 ここから --}}
             @if ($errors->has('greet'))
