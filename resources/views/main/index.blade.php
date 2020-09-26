@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+@extends('layouts.shinonomeapp')
+@section('main')
 <h1>しののめへようこそ</h1>
 <a href="/login">ログイン</a>
 or
