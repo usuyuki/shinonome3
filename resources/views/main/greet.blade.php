@@ -1,5 +1,5 @@
 
-@extends('layouts.shinonomeapp')
+@extends('layouts.shinonome_in_app')
 
 @section('content')
 

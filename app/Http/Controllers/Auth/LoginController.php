@@ -43,7 +43,7 @@ class LoginController extends Controller
 
     protected function loggedOut($request)
     {
-        return redirect(route('greet'));
+        return redirect(route('/'));
     }
 
 
