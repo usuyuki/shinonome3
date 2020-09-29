@@ -5,9 +5,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GreetController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\DMController;
-use App\Http\Controllers\Auth\SettingController;
-use App\Http\Controllers\Auth\RecordController;
+use App\Http\Controllers\DMController;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\RecordController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

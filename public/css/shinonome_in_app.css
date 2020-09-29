@@ -1,0 +1,134 @@
+.container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    /* justify-content: space-around; */
+}
+
+/* メインコンテンツ */
+.main {
+    /* position: absolute; */
+    flex-basis: 838px;
+    height: 1024px;
+    text-align: center;
+    order: 2;
+    /* flexboxの順番*/
+    border: 1px ridge;
+    /* left: 302px;
+top: 0px;             */
+    /* display: block; */
+    /* width: 830px; */
+    /* margin-right: 20px; */
+    /* background-color: pink; */
+    /* align-self: stretch; */
+}
+
+/* 左サイドバー */
+.left_sidebar {
+    /* position: absolute; */
+    flex-basis: 300px;
+    height: 500px;
+    /* left: 0px;
+    top: 0px; */
+
+    /* box-sizing: border-box; */
+    text-align: center;
+    order: 1;
+    /* flexboxの順番*/
+    position: sticky;
+    /* //固定*/
+    top: 0;
+    /*  上部 0px の位置に固定*/
+    /* position: sticky; */
+    /* margin:0 0 0 auto; */
+    /* width: 300px;
+background-color: green; */
+    /* align-self: stretch; */
+}
+
+.left_sidebar__item {
+    /* margin-bottom: 20px; */
+    position: sticky;
+}
+
+/* 右サイドバー */
+.right_sidebar {
+    /* position: absolute; */
+    flex-basis: 300px;
+    height: 500px;
+    /* left: 1140px;
+    top: 0px; */
+
+    /* box-sizing: border-box; */
+    text-align: center;
+    order: 3;
+    /* flexboxの順番*/
+    position: sticky;
+    /* //固定*/
+    top: 0;
+    /*  上部 0px の位置に固定*/
+    /* width: 30em; */
+    /* background-color: blue; */
+    /* align-self: stretch; */
+}
+
+.right_sidebar__item {
+    /* margin-bottom: 20px; */
+    position: sticky;
+}
+
+.profile_photo {
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    width: 56px;
+    object-fit: cover;
+}
+
+.logo {
+    /* margin: 80px 80px; */
+}
+
+.left-menu {
+    margin: 80px 80px;
+}
+
+li {
+    list-style: none;
+}
+/* 時計関係 */
+.time_name {
+    font-size: 30px;
+}
+
+.time {
+    font-size: 20px;
+}
+
+.second {
+    font-size: 12px;
+}
+/* 時計関係ここまで */
+
+.left-menu-content {
+    padding: 20px 0;
+    text-decoration: none;
+}
+.menu-icon {
+    float: left;
+    width: 48px;
+    height: 48px;
+    display: block;
+}
+.menu-letter {
+    width: 200px;
+    color: black;
+
+    height: 48px;
+    display: block;
+    text-align: center;
+}
+.menu-letter p {
+    font-size: 20px;
+}
