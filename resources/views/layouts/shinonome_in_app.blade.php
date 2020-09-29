@@ -141,7 +141,7 @@
                         <p id="RealtimeClockArea2">※読込中</p>
                     </div>
                     <div class="countdown">
-                        <p>この下に終了時刻までのカウントダウンが入る予定です。</p>
+                        <p>この下に終了時刻までのカウントダウンが入る予定です。<br>α,β版では時間制限を行いません。</p>
                     </div>
                 </div>
                 <div class="right-menu">

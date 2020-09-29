@@ -1,30 +1,44 @@
 <!-- リリースノートの枠を作るテンプレートです -->
 <style>
     .message {
-        border: double 4px #ccc;
-        margin: 10px padding:10px;
-        background-color: #fafafa;
+        /* border: double 4px #ccc; */
+        margin: 10px;
+        padding: 10px;
+        background-color: white;
     }
 
     .msg_title {
-        margin: 10px 20px;
-        color: #999;
+        margin: auto;
+        color: black;
         font-size: 16pt;
         font-weight: bold;
+        float: left
     }
 
     .msg_content {
         margin: 10px 20px;
-        color: #aaa;
+        color: black;
         font-size: 12pt;
     }
 
+    .msg_date {
+        color: #999;
+        text-align: right;
+    }
+
     .border {
+        margin: 0px 0px 20px;
         border-top: 1px solid black;
     }
 </style>
 <div class="message">
-    <p class="msg_title">Ver{{$ver}}</p>
+    <div class="msg_title">
+        <p>Ver{{$ver}}</p>
+
+    </div>
+    <div class="msg_date">
+        <p>{{$date}}</p>
+    </div>
     <div class="border">　</div>
 
     <div class="msg_content">
