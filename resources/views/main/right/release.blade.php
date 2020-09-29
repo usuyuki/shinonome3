@@ -1,5 +1,5 @@
 @extends('layouts.shinonome_out_app')
 
 @section('content')
-@include('components.release_message',['ver'=>'0.1','exp1'=>'α版をリリースしました'])
+@include('components.release_message',['ver'=>'0.1','exp1'=>'α版をリリースしました','exp2'=>'','exp3'=>'','exp4'=>'',])
 @endsection

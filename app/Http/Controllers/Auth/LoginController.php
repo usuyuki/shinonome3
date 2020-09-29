@@ -9,6 +9,7 @@ use Socialite;
 use Illuminate\Support\Facades\Auth;
 use \App\Models\Greet;
 use \App\Models\User;
+
 class LoginController extends Controller
 {
     /*
@@ -57,13 +58,13 @@ class LoginController extends Controller
 
 
 
-    
+
     public function handleProviderCallback($provider)
     {
         try {
             //\Socialite::with($provider)->user();でプロバイダーから送られた情報が取得できる
             $providerUser = \Socialite::with($provider)->user();
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             return redirect('/login')->with('oauth_error', '予期せぬエラーが発生しました');
         }
 
@@ -84,8 +85,8 @@ class LoginController extends Controller
                 'twitter_name' => $providerUser->nickname, // @abc
                 'profile_photo_path' => $providerUser->avatar_original
                 // 'profile_photo_path'=>$providerUser->profile_image_url_https,
-                
-                ]));
+
+            ]));
 
             return redirect($this->redirectTo);
         }
