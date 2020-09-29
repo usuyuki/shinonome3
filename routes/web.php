@@ -33,6 +33,8 @@ Route::get('/directmessage', [DMController::class, 'directmessage'])->name('dire
 Route::get('/setting', [SettingController::class, 'setting'])->name('setting');
 //ヒストリーと起床時間'/record'
 Route::get('/record', [RecordController::class, 'record'])->name('record');
+
+
 //プライバイシーポリシー '/privacypolicy'
 Route::get('/privacypolicy', [IndexController::class, 'privacypolicy'])->name('privacypolicy');
 //ご利用にあたって '/explain'
