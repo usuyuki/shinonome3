@@ -10,7 +10,7 @@ class GreetController extends Controller
 {
     public function showGreetPage(){
         $greets = Greet::latest()->get();
-        return view('main.greet',['greets'=>$greets,]);
+        return view('main.left.greet',['greets'=>$greets,]);
     }
 
     public function postGreet(Request $request){
