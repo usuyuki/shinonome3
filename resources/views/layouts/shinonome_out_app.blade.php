@@ -41,7 +41,7 @@
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
+                                <!-- @csrf -->
                             </form>
                         </div>
                     </li>
@@ -75,6 +75,9 @@
     <!-- フッター -->
     <footer>
 
+        <div class="copyright">
+            <p>copyright 2020 usuyuki.</p>
+        </div>
     </footer>
 
 </body>

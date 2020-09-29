@@ -4,6 +4,9 @@
     -webkit-justify-content: center;
     /* justify-content: space-around; */
 }
+li {
+    list-style: none;
+}
 
 /* メインコンテンツ */
 .main {
@@ -51,6 +54,47 @@ background-color: green; */
     position: sticky;
 }
 
+.profile_photo {
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    width: 56px;
+    object-fit: cover;
+}
+
+.logo {
+    /* margin: 80px 80px; */
+}
+
+.left-menu {
+    margin: 80px 80px;
+}
+
+.left-menu-content {
+    padding: 20px 0;
+}
+.left-menu-content a {
+    text-decoration: none;
+}
+.menu-icon {
+    float: left;
+    width: 48px;
+    height: 48px;
+    display: block;
+}
+.menu-letter {
+    width: 200px;
+
+    height: 48px;
+    display: block;
+    text-align: center;
+}
+.menu-letter p {
+    font-size: 20px;
+    color: black;
+}
+
 /* 右サイドバー */
 .right_sidebar {
     /* position: absolute; */
@@ -77,27 +121,10 @@ background-color: green; */
     position: sticky;
 }
 
-.profile_photo {
-    border-radius: 50%;
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
-    width: 56px;
-    object-fit: cover;
-}
-
-.logo {
-    /* margin: 80px 80px; */
-}
-
-.left-menu {
-    margin: 80px 80px;
-}
-
-li {
-    list-style: none;
-}
 /* 時計関係 */
+.watch {
+    margin-top: 100px;
+}
 .time_name {
     font-size: 30px;
 }
@@ -109,26 +136,23 @@ li {
 .second {
     font-size: 12px;
 }
+.countdown {
+    font-size: 8px;
+    color: #87c9b6;
+}
 /* 時計関係ここまで */
+.right-menu {
+    font-size: 20px;
 
-.left-menu-content {
-    padding: 20px 0;
-    text-decoration: none;
-}
-.menu-icon {
-    float: left;
-    width: 48px;
-    height: 48px;
-    display: block;
-}
-.menu-letter {
-    width: 200px;
-    color: black;
-
-    height: 48px;
-    display: block;
+    padding-top: 30%;
+    line-height: 50px;
     text-align: center;
 }
-.menu-letter p {
-    font-size: 20px;
+.right-menu-content a {
+    text-decoration: none;
+    color: black;
+}
+.copyright {
+    text-align: center;
+    display: inline-block;
 }

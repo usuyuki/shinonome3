@@ -135,8 +135,54 @@
         <div class="right_sidebar">
             <div class="right_sidebar__item">
                 <!-- 中身 -->
-                <p>右サイドバーふれっくす</p>
-                <p id="RealtimeClockArea2">※読込中</p>
+                <div class="time">
+
+                    <div class="watch">
+                        <p id="RealtimeClockArea2">※読込中</p>
+                    </div>
+                    <div class="countdown">
+                        <p>この下に終了時刻までのカウントダウンが入る予定です。</p>
+                    </div>
+                </div>
+                <div class="right-menu">
+                    <ul>
+
+
+                        <div class="right-menu-content">
+                            <li>
+                                <a href="/privacypolicy">プライバイシーポリシー</a>
+                            </li>
+                        </div>
+
+                        <div class="right-menu-content">
+                            <li>
+                                <a href="/explain">ご利用にあたって</a>
+                            </li>
+                        </div>
+
+                        <div class="right-menu-content">
+                            <li>
+                                <a href="/">しののめの使い方</a>
+                            </li>
+                        </div>
+
+                        <div class="right-menu-content">
+                            <li>
+                                <a href="/contact">お問い合わせ</a>
+                            </li>
+                        </div>
+
+                        <div class="right-menu-content">
+                            <li>
+                                <a href="/release">リリースノート</a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+
+                <div class="copyright">
+                    <p>copyright 2020 usuyuki.</p>
+                </div>
 
                 @yield('right')
             </div>
