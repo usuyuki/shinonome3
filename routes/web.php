@@ -44,8 +44,9 @@ Route::get('/explain', [IndexController::class, 'explain'])->name('explain');
 Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
 //お問い合わせ'/contact'
 Route::get('/release', [IndexController::class, 'release'])->name('release');
-//しののめの使い方 '/'
+//しののめの使い方 とTOP'/'
 Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/developer', [IndexController::class, 'developer'])->name('index');
 
 
 

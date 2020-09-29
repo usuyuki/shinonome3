@@ -30,4 +30,8 @@ class IndexController extends Controller
     {
         return view('main.right.release');
     }
+    public function developer()
+    {
+        return view('home');
+    }
 }

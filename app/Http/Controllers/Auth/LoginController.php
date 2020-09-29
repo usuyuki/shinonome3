@@ -44,7 +44,9 @@ class LoginController extends Controller
 
     protected function loggedOut($request)
     {
-        return redirect(route('/'));
+        // return redirect(route('/'));
+        //20200929←Route [/] not definedを解消できず、結果リダイレクト先をそのままいじったらなんとかいけた。しかしこれでOKなのか？
+        return redirect("/greet");
     }
 
 
