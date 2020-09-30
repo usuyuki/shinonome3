@@ -24,7 +24,8 @@ use App\Http\Controllers\RecordController;
 //     return view('welcome');
 // });
 
-
+//ホーム
+Route::get('/home', [IndexController::class, 'home'])->name('home');
 //あいさつ'/greet'
 Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
 Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
@@ -53,7 +54,7 @@ Route::get('/developer', [IndexController::class, 'developer'])->name('index');
 
 //laravel/uiでのauth関連
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 

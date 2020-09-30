@@ -154,7 +154,7 @@
                         <li>
                             <div class="left-menu-content">
 
-                                <a href="/history">
+                                <a href="/record">
                                     <div class="menu-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40" viewBox="0 0 24 24" width="50">
                                             <g>

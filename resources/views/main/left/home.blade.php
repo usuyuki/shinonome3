@@ -10,6 +10,7 @@
     .main-watch h1 {
         font-size: 30px;
         font-weight: normal;
+        margin-bottom: 30px;
     }
 
     .UTC {
@@ -17,11 +18,52 @@
     }
 
     .main-timezone {
-        font-size: 28px;
+        font-size: 20px;
     }
 
     .main-date {
         font-size: 28px;
+    }
+
+    .sunrise-wrapper {
+        margin-top: 120px;
+    }
+
+    .sunrise-wrapper h1 {
+
+        font-weight: normal;
+        text-align: center;
+
+
+    }
+
+    .sunrise {
+
+        text-align: center;
+        justify-content: center;
+
+    }
+
+    .sunrise-content {
+        width: auto;
+        margin: 0 40px;
+        text-align: center;
+        /* border: 1px solid #E7E224; */
+        display: inline-block;
+    }
+
+    .aboutday {
+        margin-top: 120px;
+    }
+
+    .aboutday h1 {
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .kome {
+        text-align: center;
+        font-size: 14px;
     }
 </style>
 
@@ -44,9 +86,41 @@
         <p id="Watch_main_UTC">※読込中</p>
     </div>
 </div>
-<div class="sunrize">
+
+<div class="sunrise-wrapper">
     <h1>本日の日の出</h1>
+    <div class="sunrise">
+
+        <div class="sunrise-content">
+            <div class="sunrise-city">
+                <h3>那覇</h3>
+            </div>
+            <div class="sunrise-time">
+                <h4>{{$sunrise_naha}}</h4>
+            </div>
+        </div>
+
+        <div class="sunrise-content">
+            <div class="sunrise-city">
+                <h3>東京</h3>
+            </div>
+            <div class="sunrise-time">
+                <h4>{{$sunrise_tokyo}}</h4>
+            </div>
+        </div>
+
+        <div class="sunrise-content">
+            <div class="sunrise-city">
+                <h3>札幌</h3>
+            </div>
+            <div class="sunrise-time">
+                <h4>{{$sunrise_sapporo}}</h4>
+            </div>
+        </div>
+    </div>
+    <P class="kome">※数分の誤差があります。</P>
 </div>
+
 <div class="aboutday">
     <h1>今日は何の日</h1>
 </div>

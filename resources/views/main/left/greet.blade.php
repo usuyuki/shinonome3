@@ -1,7 +1,13 @@
 @extends('layouts.shinonome_in_app')
 @section('title','あいさつ/しののめ')
 @section('content')
+<style>
 
+</style>
+
+<div class="main-title">
+    <h1>あいさつ</h1>
+</div>
 @if (session('oauth_error'))
 {{ session('oauth_error') }}
 @endif
