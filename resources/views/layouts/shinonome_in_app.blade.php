@@ -15,7 +15,7 @@
         gtag('config', 'UA-179296536-1');
     </script>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>@yield('title')</title>
     <meta name="description" content="しののめは朝に特化した朝限定のSNSです。" />
     <!-- ファビコン -->
