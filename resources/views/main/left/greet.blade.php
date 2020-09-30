@@ -2,7 +2,66 @@
 @section('title','あいさつ/しののめ')
 @section('content')
 <style>
+    .container-mt-3 {
+        margin: 0 auto;
+    }
 
+    .row-mb-4 {
+        width: 100%;
+        /* float: botto; */
+        display: block;
+    }
+
+    .greet-wrapper {
+        width: 100%;
+    }
+
+    .submit-letter input {
+        width: 500px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .submit-btn {
+        text-align: right;
+
+
+    }
+
+    .btn {
+        display: inline-block;
+        border-radius: 5%;
+        /* 角丸       */
+        font-size: 18pt;
+        /* 文字サイズ */
+        text-align: center;
+        /* 文字位置   */
+        cursor: pointer;
+        /* カーソル   */
+        padding: 12px 12px;
+        /* 余白       */
+        background: #ff8000;
+        /* 背景色     */
+        color: #ffffff;
+        /* 文字色     */
+        line-height: 1em;
+        /* 1行の高さ  */
+        transition: .3s;
+        /* なめらか変化 */
+        box-shadow: 6px 6px 3px #666666;
+        /* 影の設定 */
+        border: 2px solid #ff8000;
+        /* 枠の指定 */
+    }
+
+    .btn:hover {
+        box-shadow: none;
+        /* カーソル時の影消去 */
+        color: #ff8000;
+        /* 背景色     */
+        background: #ffffff;
+        /* 文字色     */
+    }
 </style>
 
 <div class="main-title">
@@ -11,23 +70,22 @@
 @if (session('oauth_error'))
 {{ session('oauth_error') }}
 @endif
-<div class="container mt-3">
+<div class="container-mt-3">
     {!! Form::open(['route' => 'greet', 'method' => 'POST']) !!}
     {{ csrf_field() }}
-    <div class="row mb-4">
+    <div class="row-mb-4">
 
 
         @guest
-        @section('left')
-
-        <div class="mx-auto">
-            <a class="btn btn-primary" href="{{ route('login') }}">ログインしてあいさつする</a>
-            <a class="btn btn-primary" href="{{ route('register') }}">新規登録してあいさつする</a>
-        </div>
-        @endsection
         @else
-        {{ Form::text('greet', null, ['class' => 'form-control col-9 mr-auto']) }}
-        {{ Form::submit('あいさつ', ['class' => 'btn btn-primary col-2']) }}
+        <div class="submit-letter">
+            {{ Form::text('greet', null, ['class' => 'form-control col-9 mr-auto']) }}
+
+        </div>
+        <div class="submit-btn">
+
+            {{ Form::submit('あいさつ', ['class' => 'btn btn-primary col-2']) }}
+        </div>
 
         @endguest
 
@@ -39,14 +97,18 @@
     {{-- エラー表示 ここまで --}}
     {!! Form::close() !!}
     {{-- あいさつ表示 --}}
-    @foreach ($greets as $greet)
-    <div class="mb-1">
-        <strong>{{ $greet->name }}</strong> {{ $greet->created_at }}
+    <div class="greet-wrapper">
+        @foreach ($greets as $greet)
+        <div class="greet-content">
+            <div class="mb-1">
+                <strong>{{ $greet->name }}</strong> {{ $greet->created_at }}
+            </div>
+            <div class="pl-3">
+                {{ $greet->greet }}
+            </div>
+        </div>
+        <hr>
+        @endforeach
     </div>
-    <div class="pl-3">
-        {{ $greet->greet }}
-    </div>
-    <hr>
-    @endforeach
 </div>
 @endsection
