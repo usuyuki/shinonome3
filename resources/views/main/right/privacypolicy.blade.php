@@ -12,6 +12,10 @@
 </div>
 
 <div class="main-explain">
-    <p>工事中です。</p>
+
+    @include('components.explain',
+    ['title'=>'プライバイシーポリシー',
+    'explain'=>'準備中です。
+    '])
 </div>
 @endsection
