@@ -193,8 +193,8 @@
                 <div class="user">
                     @guest
                     <div class="mx-auto">
-                        <a class="btn btn-primary" href="{{ route('login') }}">ログインしてあいさつする</a>
-                        <a class="btn btn-primary" href="{{ route('register') }}">新規登録してあいさつする</a>
+                        <a class="btn-primary" href="{{ route('login') }}">ログインしてあいさつする</a>
+                        <a class="btn-primary" href="{{ route('register') }}">新規登録してあいさつする</a>
                     </div>
 
                     @endguest
