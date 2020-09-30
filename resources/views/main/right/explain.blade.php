@@ -1,4 +1,4 @@
-@extends('layouts.shinonome_out_app')
+@extends('layouts.shinonome_in_app')
 @section('title','ご利用にあたって/しののめ')
 @section('content')
 <style>
@@ -7,7 +7,10 @@
 
     }
 </style>
-<h1>ご利用にあたって</h1>
+<div class="main-title">
+    <h1>ご利用にあたって</h1>
+</div>
+
 @include('components.explain',
 ['title'=>'JavaScript',
 'explain'=>'本サイトでは、より快適にご利用いただくため、JavaScript を使用しています。ご使用のブラウザ設定においてJavaScript をオン (有効) にされていない場合に、時計やグラフが正しく表示されない場合がありますので、ご了承ください。

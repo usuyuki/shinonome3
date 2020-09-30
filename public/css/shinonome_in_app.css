@@ -15,11 +15,11 @@ svg {
 .main {
     /* position: absolute; */
     flex-basis: 838px;
-    height: 1024px;
-    text-align: center;
+    height: auto;
+    /* text-align: center; */
     order: 2;
     /* flexboxの順番*/
-    border: 1px ridge;
+
     /* left: 302px;
 top: 0px;             */
     /* display: block; */
@@ -28,9 +28,17 @@ top: 0px;             */
     /* background-color: pink; */
     /* align-self: stretch; */
 }
+.main-title {
+    text-align: center;
+    margin-bottom: 3px;
+}
+.main-explain {
+    text-align: center;
+}
 
 /* 左サイドバー */
 .left_sidebar {
+    border-right: 1px ridge;
     /* position: absolute; */
     flex-basis: 300px;
     height: 500px;
@@ -71,23 +79,33 @@ background-color: green; */
 }
 
 .left-menu {
-    margin: 80px 80px;
+    margin: 80px auto;
 }
 
 .left-menu-content {
     padding: 20px 0;
+    margin: 0 0;
+    /* background-color: blue; */
+    border: 2px solid black;
+}
+.left-menu-content:hover svg {
+    fill: #ff8000;
 }
 .left-menu-content a {
     text-decoration: none;
+    text-align: center;
 }
 .menu-icon {
     float: left;
-    width: 48px;
-    height: 48px;
+    /* width: 48px; */
+    /* height: 48px; */
     display: block;
 }
+.menu-icon svg {
+    margin: 20px 20px;
+}
 .menu-letter {
-    width: 200px;
+    width: 90%;
 
     height: 48px;
     display: block;
@@ -97,7 +115,14 @@ background-color: green; */
     font-size: 20px;
     color: black;
 }
+.menu-letter:hover p {
+    font-size: 20px;
+    color: #ff8000;
+}
 
+.dropdown-item a {
+    text-decoration: none;
+}
 /* 右サイドバー */
 .right_sidebar {
     /* position: absolute; */
@@ -125,7 +150,7 @@ background-color: green; */
 }
 
 /* 時計関係 */
-.watch {
+.right-watch {
     margin-top: 100px;
 }
 .time_name {

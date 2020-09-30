@@ -75,7 +75,7 @@
                 <!-- 中身 -->
                 <div class="logo">
                     <a href="{{ url('/greet') }}">
-                        <img src="/img/logos/しののめロゴ20200924.png" width="200px" height="80px" class="logo" alt="しののめのロゴです" />
+                        <img src="/img/logos/しののめロゴ20200924.png" width="150px" height="32px" class="logo" alt="しののめのロゴです" />
                     </a>
                 </div>
                 <div class="left-menu">
@@ -144,7 +144,7 @@
 
                                     </div>
                                     <div class="menu-letter">
-                                        <p>プロフィールと設定</p>
+                                        <p>プロフィール<br>設定</p>
 
                                     </div>
                                 </a>
@@ -168,7 +168,7 @@
                                         </svg>
                                     </div>
                                     <div class="menu-letter">
-                                        <p>ヒストリーと起床時間</p>
+                                        <p>ヒストリー<br>起床時間</p>
 
                                     </div>
                                 </a>
@@ -176,20 +176,34 @@
                         </li>
                     </ul>
                 </div>
-                @if (Route::has('login'))
-                @auth
-                <img class="profile_photo" src="{{ Auth::user()->profile_photo_path }}" />
-                {{ Auth::user()->name }}
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+
+                <div class="user">
+                    @if (Route::has('login'))
+                    @auth
+                    <div class="user-icon">
+
+                        <img class="profile_photo" src="{{ Auth::user()->profile_photo_path }}" />
+                    </div>
+
+                    <div class="user-name">
+                        <p>
+                            {{ Auth::user()->name }}
+                        </p>
+                    </div>
+                    <div class="logout">
+
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                    {{ __("Logout") }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-                @endif
-                @endif
-                @yield('left')
+                            ログアウト
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                    @endif
+                    @endif
+                    @yield('left')
+                </div>
             </div>
         </div>
 
@@ -199,8 +213,8 @@
                 <!-- 中身 -->
                 <div class="time">
 
-                    <div class="watch">
-                        <p id="RealtimeClockArea2">※読込中</p>
+                    <div class="right-watch">
+                        <p id="Watch_right">※読込中</p>
                     </div>
                     <div class="countdown">
                         <p>この下に終了時刻までのカウントダウンが入る予定です。<br>α,β版では時間制限を行いません。</p>

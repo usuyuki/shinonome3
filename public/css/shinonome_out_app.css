@@ -9,10 +9,14 @@ header {
     height: 80px;
     background-color: #c7eedb;
 }
+.header-wrapper {
+    width: 80%;
+}
 .header-logo {
     width: 80%;
     float: left;
     height: 80px;
+    margin-top: 20px;
 }
 
 .login {

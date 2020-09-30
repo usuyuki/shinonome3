@@ -61,7 +61,7 @@
         <div class="header-wrapper">
             <div class="header-logo">
                 <a href="/">
-                    <img src="/img/logos/しののめロゴ20200924.png" width="150px" height="60px" alt="しののめのロゴです" />
+                    <img src="/img/logos/しののめロゴ20200924.png" width="150px" height="32px" alt="しののめのロゴです" />
                 </a>
             </div>
             @auth
@@ -86,7 +86,7 @@
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                <!-- @csrf -->
+                                @csrf
                             </form>
                         </div>
                     </li>
