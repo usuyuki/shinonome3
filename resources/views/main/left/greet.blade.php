@@ -32,7 +32,7 @@
         display: inline-block;
         border-radius: 5%;
         /* 角丸       */
-        font-size: 18pt;
+        font-size: 11pt;
         /* 文字サイズ */
         text-align: center;
         /* 文字位置   */
@@ -46,21 +46,19 @@
         /* 文字色     */
         line-height: 1em;
         /* 1行の高さ  */
+        opacity: 0.9;
+        /* 透明度     */
         transition: .3s;
         /* なめらか変化 */
-        box-shadow: 6px 6px 3px #666666;
+        box-shadow: 2px 2px 10px #666666;
         /* 影の設定 */
-        border: 2px solid #ff8000;
-        /* 枠の指定 */
     }
 
     .btn:hover {
         box-shadow: none;
         /* カーソル時の影消去 */
-        color: #ff8000;
-        /* 背景色     */
-        background: #ffffff;
-        /* 文字色     */
+        opacity: 1;
+        /* カーソル時透明度 */
     }
 </style>
 
