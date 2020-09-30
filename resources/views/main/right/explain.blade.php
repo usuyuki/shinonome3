@@ -1,5 +1,5 @@
 @extends('layouts.shinonome_out_app')
-
+@section('title','ご利用にあたって/しののめ')
 @section('content')
 <style>
     h1 {
@@ -21,7 +21,11 @@
 
 @include('components.explain',
 ['title'=>'Google Analytics',
-'explain'=>'本サービスではGoogleによるアクセス解析ツール「GoogleAnalytics」を利用しています。このGoogleAnalyticsはトラフィックデータの収集のためにクッキー（Cookie）を使用しております。トラフィックデータは匿名で収集されており、個人を特定するものではありません。
+'explain'=>'本サービスではGoogleによるアクセス解析ツール「GoogleAnalytics」を利用しています。このGoogleAnalyticsはトラフィックデータの収集のためにクッキー（Cookie）を使用しております。トラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。
+'])
+@include('components.explain',
+['title'=>'免責事項',
+'explain'=>'当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。
 '])
 
 

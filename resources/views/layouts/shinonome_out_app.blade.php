@@ -119,7 +119,50 @@
 
     <!-- フッター -->
     <footer>
+        <div class="footer-menu">
+            <ul>
+                <div class="footer-menu-content">
+                    <li>
+                        <a href="">
 
+                        </a>
+                    </li>
+                </div>
+
+                <div class="footer-menu-content">
+                    <li>
+                        <a href="">
+
+                        </a>
+                    </li>
+                </div>
+
+                <div class="footer-menu-content">
+                    <li>
+                        <a href="">
+
+                        </a>
+                    </li>
+                </div>
+
+                <div class="footer-menu-content">
+                    <li>
+                        <a href="">
+
+                        </a>
+                    </li>
+                </div>
+
+                <div class="footer-menu-content">
+                    <li>
+                        <a href="">
+
+                        </a>
+                    </li>
+                </div>
+
+            </ul>
+        </div>
         <div class="copyright">
             <p>copyright 2020 usuyuki.</p>
         </div>

@@ -85,7 +85,9 @@
 
                                 <a href="/home">
                                     <div class="menu-icon">
-                                        <img src="/img/icons/home-24px.svg" alt="ホームアイコン">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="100">
+                                            <path d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" /></svg>
 
                                     </div>
                                     <div class="menu-letter">
@@ -100,7 +102,9 @@
 
                                 <a href="/greet">
                                     <div class="menu-icon">
-                                        <img src="/img/icons/wb_sunny-24px.svg" alt="あいさつアイコン">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40">
+                                            <path d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z" /></svg>
 
                                     </div>
                                     <div class="menu-letter">
@@ -116,7 +120,9 @@
 
                                 <a href="/directmessage">
                                     <div class="menu-icon">
-                                        <img src="/img/icons/chat_bubble-24px.svg" alt="コチャアイコン">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40">
+                                            <path d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" /></svg>
 
                                     </div>
                                     <div class="menu-letter">
@@ -132,7 +138,9 @@
 
                                 <a href="/setting">
                                     <div class="menu-icon">
-                                        <img src="/img/icons/person_pin-24px.svg" alt="設定アイコン">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="50">
+                                            <path d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.3c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" /></svg>
 
                                     </div>
                                     <div class="menu-letter">
@@ -148,8 +156,16 @@
 
                                 <a href="/history">
                                     <div class="menu-icon">
-                                        <img src="/img/icons/history_edu-24px.svg" alt="ヒストリーアイコン">
-
+                                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40" viewBox="0 0 24 24" width="50">
+                                            <g>
+                                                <rect fill="none" height="24" width="24" />
+                                            </g>
+                                            <g>
+                                                <g>
+                                                    <path d="M9,4v1.38c-0.83-0.33-1.72-0.5-2.61-0.5c-1.79,0-3.58,0.68-4.95,2.05l3.33,3.33h1.11v1.11c0.86,0.86,1.98,1.31,3.11,1.36 V15H6v3c0,1.1,0.9,2,2,2h10c1.66,0,3-1.34,3-3V4H9z M7.89,10.41V8.26H5.61L4.57,7.22C5.14,7,5.76,6.88,6.39,6.88 c1.34,0,2.59,0.52,3.54,1.46l1.41,1.41l-0.2,0.2c-0.51,0.51-1.19,0.8-1.92,0.8C8.75,10.75,8.29,10.63,7.89,10.41z M19,17 c0,0.55-0.45,1-1,1s-1-0.45-1-1v-2h-6v-2.59c0.57-0.23,1.1-0.57,1.56-1.03l0.2-0.2L15.59,14H17v-1.41l-6-5.97V6h8V17z" />
+                                                </g>
+                                            </g>
+                                        </svg>
                                     </div>
                                     <div class="menu-letter">
                                         <p>ヒストリーと起床時間</p>

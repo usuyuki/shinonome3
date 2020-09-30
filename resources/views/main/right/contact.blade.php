@@ -1,5 +1,5 @@
 @extends('layouts.shinonome_out_app')
-
+@section('title','お問い合わせ/しののめ')
 @section('content')
 <style>
     iframe {

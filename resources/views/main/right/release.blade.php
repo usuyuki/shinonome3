@@ -1,5 +1,5 @@
 @extends('layouts.shinonome_out_app')
-
+@section('title','リリースノート/しののめ')
 @section('content')
 <style>
     h1 {

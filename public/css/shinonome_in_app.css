@@ -7,7 +7,10 @@
 li {
     list-style: none;
 }
-
+svg {
+    fill: black;
+    /* fill: currentColor; */
+}
 /* メインコンテンツ */
 .main {
     /* position: absolute; */
@@ -128,14 +131,19 @@ background-color: green; */
 .time_name {
     font-size: 40px;
 }
-
-.time {
+.timezone {
     font-size: 30px;
+}
+.time {
+    font-size: 38px;
 }
 
 .second {
-    font-size: 20px;
+    font-size: 28px;
 }
+/* .millisec {
+    font-size: 14px;
+} */
 .countdown {
     font-size: 8px;
     color: #87c9b6;

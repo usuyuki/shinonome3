@@ -16,11 +16,11 @@ function showClock2() {
     var nowMin = set2fig(nowTime.getMinutes());
     var nowSec = set2fig(nowTime.getSeconds());
     var msg =
-        "<span class='time_name'>現在時刻</span><br><span class='time'>" +
+        "<span class='time_name'>現在時刻</span><span class='timezone'>(JST)</span><br><span class='time'>" +
         nowHour +
         ":" +
         nowMin +
-        "</span><span class='second'>," +
+        ":</span><span class='second'>" +
         nowSec +
         "</span>";
     document.getElementById("RealtimeClockArea2").innerHTML = msg;

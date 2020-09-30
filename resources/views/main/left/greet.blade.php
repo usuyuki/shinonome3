@@ -1,5 +1,5 @@
 @extends('layouts.shinonome_in_app')
-
+@section('title','あいさつ/しののめ')
 @section('content')
 
 @if (session('oauth_error'))
