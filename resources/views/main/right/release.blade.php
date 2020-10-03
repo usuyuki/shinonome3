@@ -14,6 +14,8 @@
 </div>
 
 <h2>release note</h2>
+@include('components.release_message',['ver'=>'0.2','date'=>'2020.10.4','exp1'=>'ログイン時のページをTwitter認証に限定し、レイアウトも独自のものに変更しました','exp2'=>'左サイドバーのレイアウト崩壊を修正しました','exp3'=>'','exp4'=>'',])
+
 @include('components.release_message',['ver'=>'0.1','date'=>'2020.9.30','exp1'=>'α版をリリースしました','exp2'=>'','exp3'=>'','exp4'=>'',])
 
 @endsection
