@@ -71,7 +71,7 @@
 
     <!-- Googleフォント-->
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 
 </head>
@@ -197,8 +197,12 @@
 
                 <div class="user">
                     @guest
-                    <div class="mx-auto">
-                        <a href="{{ route('login') }}">ログインしてあいさつする</a>
+                    <div class="login-btn">
+                        <a href="{{ route('login') }}">ログインしてあいさつする<br></a>
+                    </div>
+                    <p> </p>
+                    <div class="register-btn">
+
                         <a href="{{ route('register') }}">新規登録してあいさつする</a>
                     </div>
 
@@ -215,13 +219,13 @@
                             {{ Auth::user()->name }}
                         </p>
                     </div>
-                    <div class="logout">
+                    <div class="logout-btn">
 
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                             ログアウト
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <form id="logout-btn" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
                     </div>

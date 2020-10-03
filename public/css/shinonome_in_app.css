@@ -79,8 +79,8 @@ background-color: green; */
 }
 
 .left-menu {
-    margin: 80px auto;
-    font-family: "M PLUS Rounded 1c";
+    margin: 40px auto;
+    font-family: "M PLUS Rounded 1c", sans-serif;
     justify-content: center;
 }
 
@@ -123,6 +123,69 @@ background-color: green; */
 }
 
 .dropdown-item a {
+    text-decoration: none;
+}
+
+.user {
+    /* display: block; */
+    margin: 40px auto;
+
+    justify-content: center;
+}
+.user-icon {
+    float: left;
+    /* border: 1px solid blue; */
+    margin-left: 90px;
+}
+.login-btn a {
+    display: block;
+    text-decoration: none;
+    width: 200px;
+    padding: 0.3em;
+    margin-left: 100px;
+    text-align: center;
+    color: #1b1b1b;
+    background: #fff;
+    border: 1px solid #1b1b1b;
+}
+.login-btn:hover a {
+    background: #1b1b1b;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+.register-btn a {
+    display: block;
+    text-decoration: none;
+    width: 200px;
+    padding: 0.3em;
+    margin-left: 100px;
+    text-align: center;
+    color: #1b1b1b;
+    background: #fff;
+    border: 1px solid #1b1b1b;
+}
+.register-btn:hover a {
+    background: #1b1b1b;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+.logout-btn a {
+    display: block;
+    text-decoration: none;
+    width: 90px;
+    padding: 0.3em;
+    margin-left: 200px;
+    text-align: center;
+    color: #1b1b1b;
+    background: #fff;
+    border: 1px solid #1b1b1b;
+}
+.logout-btn:hover a {
+    background: #1b1b1b;
+    color: #fff;
+    cursor: pointer;
     text-decoration: none;
 }
 /* 右サイドバー */
@@ -174,10 +237,11 @@ background-color: green; */
     xpadding-top: 30%;
     line-height: 70px;
     text-align: center;
-    font-family: "M PLUS Rounded 1c";
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    justify-content: center;
 }
 .right-menu-content {
-    width: 100%;
+    /* width: 100%; */
     display: inline-block;
 }
 .right-menu-content a {
