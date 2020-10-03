@@ -68,7 +68,12 @@
     <link href="/css/shinonome_in_app.css" rel="stylesheet">
     <!-- JS読み込み -->
     <script type="text/javascript" src="/js/shinonomeapp.js"></script>
-    <!-- 時計表示用 -->
+
+    <!-- Googleフォント-->
+    <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+
 </head>
 
 <body>
@@ -98,7 +103,7 @@
 
                                 <a href="/home">
                                     <div class="menu-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40">
                                             <path d="M0 0h24v24H0z" fill="none" />
                                             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" /></svg>
 
@@ -151,7 +156,7 @@
 
                                 <a href="/setting">
                                     <div class="menu-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40">
                                             <path d="M0 0h24v24H0z" fill="none" />
                                             <path d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.3c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" /></svg>
 
@@ -169,7 +174,7 @@
 
                                 <a href="/record">
                                     <div class="menu-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40" viewBox="0 0 24 24" width="50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40" viewBox="0 0 24 24" width="40">
                                             <g>
                                                 <rect fill="none" height="24" width="24" />
                                             </g>
