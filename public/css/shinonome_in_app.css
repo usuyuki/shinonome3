@@ -208,3 +208,8 @@ background-color: green; */
     margin: 0 auto;
     width: 70%;
 }
+.kome {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.5;
+}

@@ -60,11 +60,6 @@
         text-align: center;
         font-weight: normal;
     }
-
-    .kome {
-        text-align: center;
-        font-size: 14px;
-    }
 </style>
 
 <div class="main-title">

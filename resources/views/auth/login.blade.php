@@ -1,76 +1,48 @@
-@extends('layouts.app')
-
+@extends('layouts.shinonome_in_app')
+@section('title','twitterでログイン/しののめ')
 @section('content')
+<style>
+    .btn-twitter-login {
+        width: 200px;
+        height: 45px;
+        line-height: 45px;
+        margin: 0 auto;
+    }
 
+    .btn-twitter-login a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        background: #F7F7F7;
+        text-align: center;
+        border-left: 22px solid #00ACED;
+        color: #00ACED;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0px 2px 2px 0px #DEDEDE;
+        transition: all 0.2s ease;
+    }
 
-<div class="container">
-    <div class="row justify-content-center">
-    <a href="./login/twitter">Twitterでのログインはここをクリック</a>
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    .btn-twitter-login a:hover {
+        background: #F7F7F7;
+        color: #00ACED;
+        margin-left: 0px;
+        margin-top: 0px;
+        border-left: 22px solid #FF8000;
+        box-shadow: 0px 2px 2px 0px #DEDEDE;
+    }
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    p {
+        text-align: center;
+    }
+</style>
+<div class="main-title">
+    <h1>ログイン</h1>
 </div>
+<p>現行バージョンではTwitterでのログインのみに対応しています。ご了承ください。</p>
+<div class='btn-twitter-login'>
+    <a href='./login/twitter'>Twitterでログイン</a>
+</div>
+<p class="kome">※許可なくつぶやかれたり、ツイートを取得することはありません。</p>
 @endsection
