@@ -79,6 +79,7 @@ background-color: green; */
 
 .logo {
     margin: 30px auto 0;
+    padding-left: 30px;
 }
 
 .left-menu {
@@ -237,16 +238,17 @@ background-color: green; */
 /* 時計関係ここまで */
 
 .right-menu {
-    font-size: 20px;
+    font-size: 15px;
     xpadding-top: 30%;
     line-height: 70px;
+
     text-align: center;
     font-family: "M PLUS Rounded 1c", sans-serif;
-    justify-content: center;
+    flex-direction: column;
 }
 .right-menu-content {
     /* width: 100%; */
-    display: inline-block;
+    display: block;
 }
 .right-menu-content a {
     text-decoration: none;

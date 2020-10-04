@@ -71,8 +71,13 @@
 
     <!-- Googleフォント-->
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+    <!-- font-family: "Hannari";  -->
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
+    <!-- font-family: 'M PLUS Rounded 1c', sans-serif; -->
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+    <!-- font-family: 'M PLUS 1p', sans-serif; -->
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <!-- font-family: 'Sawarabi Mincho', sans-serif; -->
 
 </head>
 
