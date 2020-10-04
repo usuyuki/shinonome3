@@ -267,7 +267,7 @@
 
                         <div class="right-menu-content">
                             <li>
-                                <a href="/">しののめの使い方</a>
+                                <a href="/">しののめについて</a>
                             </li>
                         </div>
 

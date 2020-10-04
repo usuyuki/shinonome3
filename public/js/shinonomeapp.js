@@ -17,7 +17,7 @@ function showClock_right() {
     var nowMin = set2fig(nowTime.getMinutes());
     var nowSec = set2fig(nowTime.getSeconds());
     var msg =
-        "<span class='time_name'>現在時刻</span><span class='timezone'>(JST)</span><br><span class='time'>" +
+        "<span class='time_name'>現在時刻</span><span class='timezone'></span><br><span class='time'>" +
         nowHour +
         ":" +
         nowMin +
@@ -41,7 +41,7 @@ function showClock_main_JST() {
     var nowMin = set2fig(nowTime.getMinutes());
     var nowSec = set2fig(nowTime.getSeconds());
     var msg =
-        "<span class='main-timezone'>日本標準時(JST)</span><br><span class='main-date'>" +
+        "<span class='main-timezone'>お使いのデバイスでの時刻</span><br><span class='main-date'>" +
         nowYear +
         "年" +
         nowMonth +

@@ -4,6 +4,9 @@
     -webkit-justify-content: center;
     /* justify-content: space-around; */
 }
+.center {
+    text-align: center;
+}
 li {
     list-style: none;
 }

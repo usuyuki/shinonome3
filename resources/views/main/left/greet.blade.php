@@ -98,6 +98,9 @@
     <div class="greet-wrapper">
         @foreach ($greets as $greet)
         <div class="greet-content">
+            <div class="greet-user-icon">
+
+            </div>
             <div class="mb-1">
                 <strong>{{ $greet->name }}</strong> {{ $greet->created_at }}
             </div>
