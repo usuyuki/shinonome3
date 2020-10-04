@@ -18,8 +18,28 @@ class SettingController extends Controller
     }
     public function postSetting(Request $request)
     {
-        $user = auth()->user();
+        //ログインユーザーデーターの取得
+        $user = \Auth::user();
 
-        return back();
+        //リクエストデータの処理(何も入力しなかった時用)
+        if (is_null($request->profile_photo_path)) {
+            $request->profile_photo_path = $user->profile_photo_path;
+        }
+        if (is_null($request->name)) {
+            $request->name = $user->name;
+        }
+        //画像のパス処理
+        //xamppに保存されてしまいうまくいかない。
+        // $path = $request->file('profile_photo_path')->store('public/img/user/profile_photo_path');
+        // $user->profile_photo_path = basename($path);
+
+        //更新
+        $user = User::where('id', '=', $user->id)->first();
+        $user->update([
+            'name' => $request->name,
+            'explain' => $request->explain,
+            'profile_photo_path' => $request->profile_photo_path,
+        ]);
+        return redirect('/setting');
     }
 }
