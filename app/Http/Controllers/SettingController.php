@@ -3,11 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\Greet;
+use \App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class SettingController extends Controller
 {
-    public function setting()
+    public function showSetting(Request $request)
     {
-        return view('main.left.setting');
+        $user = Auth::user();
+        \Log::debug($user->id);
+        return view('main.left.setting', ['user' => $user,]);
+    }
+    public function postSetting(Request $request)
+    {
+        $user = auth()->user();
+
+        return back();
     }
 }

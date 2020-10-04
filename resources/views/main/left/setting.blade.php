@@ -9,7 +9,10 @@
     <h1>プロフィールと設定</h1>
 </div>
 
-<div class="main-explain">
-    <p>工事中です。</p>
+<div class="setting-wrapper">
+    <div class="set-user-icon">
+
+        <a>アイコンを変える</a>
+    </div>
 </div>
 @endsection

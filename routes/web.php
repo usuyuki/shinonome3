@@ -32,7 +32,8 @@ Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
 //コチャ '/directmessage'
 Route::get('/directmessage', [DMController::class, 'directmessage'])->name('directmessage');
 //プロフィールと設定'/setting'
-Route::get('/setting', [SettingController::class, 'setting'])->name('setting');
+Route::get('/setting', [SettingController::class, 'showSetting'])->name('setting');
+Route::post('/setting', [SettingController::class, 'postSetting'])->name('setting');
 //ヒストリーと起床時間'/record'
 Route::get('/record', [RecordController::class, 'record'])->name('record');
 
