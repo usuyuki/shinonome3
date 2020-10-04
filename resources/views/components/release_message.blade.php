@@ -17,6 +17,7 @@
 
     .msg_content {
         margin: 10px 20px;
+        padding-bottom: 30px;
         color: black;
         font-size: 12pt;
     }
