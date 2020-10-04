@@ -8,7 +8,7 @@
     }
 </style>
 <div class="main-title">
-    <h1>ご利用にあたって</h1>
+    <h1><span class="orange-line">ご利用にあたって</span></h1>
 </div>
 
 @include('components.explain',

@@ -8,7 +8,7 @@
 </style>
 
 <div class="main-title">
-    <h1>お問い合わせ</h1>
+    <h1><span class="orange-line">お問い合わせ</span></h1>
 </div>
 
 <div class="main-explain">

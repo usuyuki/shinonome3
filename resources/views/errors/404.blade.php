@@ -1,4 +1,4 @@
-@extends('layouts.shinonome_out_app')
+@extends('layouts.shinonome_in_app')
 @section('title','しののめ')
 
 

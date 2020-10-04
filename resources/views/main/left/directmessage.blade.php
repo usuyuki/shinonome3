@@ -6,7 +6,7 @@
 </style>
 
 <div class="main-title">
-    <h1>ダイレクトメッセージ</h1>
+    <h1><span class="orange-line">ダイレクトメッセージ</span></h1>
 </div>
 
 <div class="main-explain">

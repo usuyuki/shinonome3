@@ -63,7 +63,7 @@
 </style>
 
 <div class="main-title">
-    <h1>ホーム</h1>
+    <h1><span class="orange-line">ホーム</span></h1>
 </div>
 
 <!-- <div class="main-explain">
