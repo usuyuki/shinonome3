@@ -11,8 +11,9 @@ class SettingController extends Controller
 {
     public function showSetting(Request $request)
     {
-        $user = Auth::user();
-        \Log::debug($user->id);
+        //備忘録→下のAuthはバックスラッシュが必要　バックスラッシュすると
+        $user = \Auth::user();
+        // \Log::debug($user);
         return view('main.left.setting', ['user' => $user,]);
     }
     public function postSetting(Request $request)

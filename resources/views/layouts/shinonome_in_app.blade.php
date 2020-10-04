@@ -98,7 +98,7 @@
                 <!-- 中身 -->
                 <div class="logo">
                     <a href="{{ url('/greet') }}">
-                        <img src="/img/logos/しののめロゴ20200924.png" width="150px" height="32px" class="logo" alt="しののめのロゴです" />
+                        <img src="/img/logos/しののめロゴ20200924.png" width="150px" height="32px" class="logo" alt="しののめのロゴです">
                     </a>
                 </div>
                 <div class="left-menu">

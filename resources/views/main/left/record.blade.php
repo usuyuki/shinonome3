@@ -6,7 +6,7 @@
 </style>
 
 <div class="main-title">
-    <h1>ヒストリーと起床時間</h1>
+    <h1><span class="orange-line">ヒストリーと起床時間</span></h1>
 </div>
 
 <div class="main-explain">

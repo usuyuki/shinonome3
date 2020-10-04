@@ -63,7 +63,7 @@
 </style>
 
 <div class="main-title">
-    <h1>あいさつ</h1>
+    <h1><span class="orange-line">あいさつ</span></h1>
 </div>
 @if (session('oauth_error'))
 {{ session('oauth_error') }}

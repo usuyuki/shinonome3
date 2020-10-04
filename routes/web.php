@@ -29,14 +29,17 @@ Route::get('/home', [IndexController::class, 'home'])->name('home');
 //あいさつ'/greet'
 Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
 Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
-//コチャ '/directmessage'
-Route::get('/directmessage', [DMController::class, 'directmessage'])->name('directmessage');
-//プロフィールと設定'/setting'
-Route::get('/setting', [SettingController::class, 'showSetting'])->name('setting');
-Route::post('/setting', [SettingController::class, 'postSetting'])->name('setting');
-//ヒストリーと起床時間'/record'
-Route::get('/record', [RecordController::class, 'record'])->name('record');
 
+//ログインしてない場合→ログインに遷移する！！！
+Route::group(['middleware' => 'auth'], function () {
+    //コチャ '/directmessage'
+    Route::get('/directmessage', [DMController::class, 'directmessage'])->name('directmessage');
+    //プロフィールと設定'/setting'
+    Route::get('/setting', [SettingController::class, 'showSetting'])->name('setting');
+    Route::post('/setting', [SettingController::class, 'postSetting'])->name('setting');
+    //ヒストリーと起床時間'/record'
+    Route::get('/record', [RecordController::class, 'record'])->name('record');
+});
 
 //プライバイシーポリシー '/privacypolicy'
 Route::get('/privacypolicy', [IndexController::class, 'privacypolicy'])->name('privacypolicy');

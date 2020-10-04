@@ -8,7 +8,7 @@
 </style>
 
 <div class="main-title">
-    <h1>プライバイシーポリシー</h1>
+    <h1><span class="orange-line">プライバシーポリシー</span></h1>
 </div>
 
 
