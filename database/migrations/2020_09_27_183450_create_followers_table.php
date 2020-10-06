@@ -22,7 +22,10 @@ class CreateFollowersTable extends Migration
             $table->bigInteger('followed_id')->comment('フォローされているユーザID');
             $table->timestamps();
 
-            //uniue制約→重複防止
+            //インデックスで高速化
+            $table->index('following_id');
+            $table->index('followed_id');
+            //同じIDの登録防止
             $table->unique([
                 'following_id',
                 'followed_id'

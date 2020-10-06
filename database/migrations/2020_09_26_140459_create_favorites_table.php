@@ -19,7 +19,15 @@ class CreateFavoritesTable extends Migration
             $table->unsignedInteger('greet_id')->comment('あいさつID');
             $table->timestamps();
 
+
+            //インデックスで高速化
+            $table->index('id');
+            $table->index('user_id');
+            $table->index('greet_id');
+
+
             //unique制約→対象のカラムには重複した値を設定することができなくなる
+            //同じIDの登録防止
             $table->unique([
                 'user_id',
                 'greet_id'

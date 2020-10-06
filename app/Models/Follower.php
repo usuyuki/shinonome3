@@ -9,7 +9,7 @@ class Follower extends Model
 {
     use HasFactory;
 
-    //プライマリーキーの設定
+    //プライマリーキーの設定←プライマリーキーとはデータベースにおいてデータの出席番号として使われる項目、名前だと完全一致がゼロじゃないが、出席番号だと検索でかぶることがない的な感じ
     protected $primaryKey = [
         'following_id',
         'followed_id'

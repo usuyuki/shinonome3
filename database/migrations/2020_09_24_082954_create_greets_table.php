@@ -20,6 +20,12 @@ class CreateGreetsTable extends Migration
             $table->text('greet')->comment('本文');
             $table->timestamps();
 
+            //インデックスを作る→検索の高速化に貢献
+            $table->index('id');
+            $table->index('user_id');
+            $table->index('greet');
+
+
             //他テーブルと関連付け 外部キー接続を宣言
             //cascade→親テーブルに対して更新を行うと子テーブルで同じ値を持つカラムの値も合わせて更新される
             //つまりユーザー消すとコメントも消せるはず？

@@ -16,14 +16,13 @@ class User extends Authenticatable
      *
      * @var array
      */
+    //値の変更許可リスト
     protected $fillable = [
         'name',
         'email',
         'explain',
         'password',
-        'twitter_token',
         'profile_photo_path',
-        'twitter_id',
         'twitter_name',
     ];
 
