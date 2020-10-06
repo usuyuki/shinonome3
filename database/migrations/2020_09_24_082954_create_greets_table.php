@@ -19,6 +19,15 @@ class CreateGreetsTable extends Migration
             $table->string('name')->null()->comment('ユーザ名');
             $table->text('greet')->comment('本文');
             $table->timestamps();
+
+            //他テーブルと関連付け 外部キー接続を宣言
+            //cascade→親テーブルに対して更新を行うと子テーブルで同じ値を持つカラムの値も合わせて更新される
+            //つまりユーザー消すとコメントも消せるはず？
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('greets')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

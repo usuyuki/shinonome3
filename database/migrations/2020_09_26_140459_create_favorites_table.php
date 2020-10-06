@@ -18,6 +18,24 @@ class CreateFavoritesTable extends Migration
             $table->unsignedInteger('user_id')->comment('ユーザID');
             $table->unsignedInteger('greet_id')->comment('あいさつID');
             $table->timestamps();
+
+            //unique制約→対象のカラムには重複した値を設定することができなくなる
+            $table->unique([
+                'user_id',
+                'greet_id'
+            ]);
+            //他テーブルと接続 referenceはそのまま参照と捉えてよい？
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('greet_id')
+                ->references('id')
+                ->on('greets')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

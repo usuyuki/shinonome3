@@ -14,9 +14,19 @@ class CreateFollowersTable extends Migration
     public function up()
     {
         Schema::create('followers', function (Blueprint $table) {
+            /**
+             * 自分がフォローしているユーザーのあいさつを表示するとき
+             * 自分がfollowing_id フォローした相手がfollowed_id
+             */
             $table->bigInteger('following_id')->comment('フォローしているユーザID');
             $table->bigInteger('followed_id')->comment('フォローされているユーザID');
             $table->timestamps();
+
+            //uniue制約→重複防止
+            $table->unique([
+                'following_id',
+                'followed_id'
+            ]);
         });
     }
 

@@ -13,4 +13,7 @@ class Favorite extends Model
     //     'greet_id',
 
     // ];
+
+    //タイムスタンプ無効に←いらないから
+    public $timestamps = false;
 }
