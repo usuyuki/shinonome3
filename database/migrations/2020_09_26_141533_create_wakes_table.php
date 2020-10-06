@@ -14,7 +14,7 @@ class CreateWakesTable extends Migration
     public function up()
     {
         Schema::create('wakes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->unsignedInteger('user_id')->comment('ユーザID');
             $table->date('get_up_time')->comment('起床時間');
             $table->timestamps();

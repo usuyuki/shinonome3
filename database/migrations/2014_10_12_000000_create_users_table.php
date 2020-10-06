@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name')->comment('twitterの名前から取得');
             $table->string('explain')->nullable()->comment('自己紹介');
             $table->string('twitter_id')->unique()->nullable()->comment('twitterの内部ID');
