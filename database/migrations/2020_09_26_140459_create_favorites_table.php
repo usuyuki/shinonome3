@@ -33,6 +33,7 @@ class CreateFavoritesTable extends Migration
                 'greet_id'
             ]);
             //他テーブルと接続 referenceはそのまま参照と捉えてよい？
+            //cascade→親テーブルに対して更新を行うと子テーブルで同じ値を持つカラムの値も合わせて更新される
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')

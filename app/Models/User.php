@@ -45,9 +45,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    //
-    public function greet()
+    //テーブルとの関連付け
+    //belong to はhasManyと違って従テーブルから関連付けている主テーブルのレコード取り出す
+    public function followers()
     {
-        return $this->hasOne('App/Greet');
+        return $this->belongsToMany(self::class, 'followers', 'followed_id', 'following_id');
+    }
+
+    public function follows()
+    {
+        return $this->belongsToMany(self::class, 'followers', 'following_id', 'followed_id');
     }
 }

@@ -19,6 +19,23 @@ class CreateDirectMessagesTable extends Migration
             $table->bigInteger('receive_user_id')->comment('受信者');
             $table->text('message')->comment('メッセージ');
             $table->timestamps();
+
+            $table->index('id');
+            $table->index('send_user_id');
+            $table->index('receive_user_id');
+
+
+            $table->foreign('send_user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('receive_user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

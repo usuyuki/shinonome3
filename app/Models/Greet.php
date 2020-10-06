@@ -19,14 +19,14 @@ class Greet extends Model
         'greet',
     ];
 
-    //hasOne結合で使うための関数
-    public function getData()
+    public function user()
     {
-        $data = [
-            'date' => $this->created_at,
-            'greet' => $this->greet,
-            'user_id' => $this->user_id,
-        ];
-        return $data;
+        return $this->belongsTo(User::class);
+    }
+
+    //hasMany結合！
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
     }
 }

@@ -18,6 +18,16 @@ class CreateWakesTable extends Migration
             $table->unsignedInteger('user_id')->comment('ユーザID');
             $table->date('get_up_time')->comment('起床時間');
             $table->timestamps();
+
+            $table->index('id');
+            $table->index('user_id');
+
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

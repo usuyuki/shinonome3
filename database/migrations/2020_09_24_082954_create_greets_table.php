@@ -31,7 +31,7 @@ class CreateGreetsTable extends Migration
             //つまりユーザー消すとコメントも消せるはず？
             $table->foreign('user_id')
                 ->references('id')
-                ->on('greets')
+                ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
