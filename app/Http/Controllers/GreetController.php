@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class GreetController extends Controller
 {
+
+    //古い処理
     public function showGreetPage()
     {
         $greets = Greet::latest()->get();
@@ -29,5 +31,37 @@ class GreetController extends Controller
             'greet' => $request->greet,
         ]);
         return back();
+    }
+    //
+
+
+    // 一覧表示
+    public function index()
+    {
+        //
+    }
+
+    // あいさつ入力画面
+    public function create()
+    {
+        //
+    }
+
+    // あいさつ投稿処理
+    public function store(Request $request)
+    {
+        //
+    }
+
+    // あいさつ詳細画面→不要
+
+
+    // ツイート編集画面→不要
+
+
+    // ツイート削除処理
+    public function destroy($id)
+    {
+        //
     }
 }

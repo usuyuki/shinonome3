@@ -18,10 +18,14 @@ class CreateGreetsTable extends Migration
             $table->unsignedInteger('user_id')->comment('ユーザID');
             $table->string('name')->null()->comment('ユーザ名');
             $table->text('greet')->comment('本文');
+            //↓これでdeleted atを追加
+            $table->softDeletes();
+
             $table->timestamps();
 
             //インデックスを作る→検索の高速化に貢献
             $table->index('id');
+            $table->index('name');
             $table->index('user_id');
             $table->index('greet');
 

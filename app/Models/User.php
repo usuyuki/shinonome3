@@ -56,4 +56,38 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(self::class, 'followers', 'following_id', 'followed_id');
     }
+
+
+    //ログインしているユーザーを除くユーザーを５人ずつ取得(ページネーション)
+    public function getAllUsers(Int $user_id)
+    {
+        return $this->Where('id', '<>', $user_id)->paginate(5);
+    }
+
+
+
+    //参考→https://qiita.com/namizatork/items/0c81b0a94a1084cda6de#%E3%83%A6%E3%83%BC%E3%82%B6%E4%B8%80%E8%A6%A7%E8%A1%A8%E7%A4%BA%E7%94%BB%E9%9D%A2
+    // フォローする
+    public function follow(Int $user_id)
+    {
+        return $this->follows()->attach($user_id);
+    }
+
+    // フォロー解除する
+    public function unfollow(Int $user_id)
+    {
+        return $this->follows()->detach($user_id);
+    }
+
+    // フォローしているか
+    public function isFollowing(Int $user_id)
+    {
+        return (bool) $this->follows()->where('followed_id', $user_id)->first(['id']);
+    }
+
+    // フォローされているか
+    public function isFollowed(Int $user_id)
+    {
+        return (bool) $this->followers()->where('following_id', $user_id)->first(['id']);
+    }
 }

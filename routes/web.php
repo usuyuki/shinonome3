@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DMController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\RecordController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,16 @@ Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
 
 //ログインしてない場合→ログインに遷移する！！！
 Route::group(['middleware' => 'auth'], function () {
+
+    //CRUDルーティングを一度に行うRoute::resource
+    //いらないメソッドまでリンク作られてしまうのでonly使うことでエラーを防止する
+    Route::resource('users', UsersController::class, ['only' => ['index', 'show', 'update']]);
+
+    // フォロー/フォロー解除を追加
+    Route::post('users/{user}/follow', 'UsersController@follow')->name('follow');
+    Route::delete('users/{user}/unfollow', 'UsersController@unfollow')->name('unfollow');
+
+    //original
     //コチャ '/directmessage'
     Route::get('/directmessage', [DMController::class, 'directmessage'])->name('directmessage');
     //プロフィールと設定'/setting'
