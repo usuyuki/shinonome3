@@ -39,8 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', UsersController::class, ['only' => ['index', 'show', 'update']]);
 
     // フォロー/フォロー解除を追加
-    Route::post('users/{user}/follow', 'UsersController@follow')->name('follow');
-    Route::delete('users/{user}/unfollow', 'UsersController@unfollow')->name('unfollow');
+    Route::post('users/{user}/follow', [UsersController::class, 'follow'])->name('follow');
+    Route::delete('users/{user}/unfollow', [UsersController::class, 'unfollow'])->name('unfollow');
 
     //original
     //コチャ '/directmessage'
