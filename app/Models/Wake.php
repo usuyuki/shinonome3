@@ -9,7 +9,7 @@ class Wake extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'wake_up_time',
+        'get_up_time',
 
     ];
 }

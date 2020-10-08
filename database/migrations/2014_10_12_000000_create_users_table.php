@@ -29,6 +29,8 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('set2')->nullable()->comment('設定1');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->index('id');
         });
     }
 
@@ -40,8 +42,8 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
-        // Schema::table('users', function (Blueprint $table) {
-        //     $table->string('password')->nullable(false)->change();
-        // });
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('password')->nullable(false)->change();
+        });
     }
 }
