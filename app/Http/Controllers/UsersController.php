@@ -81,10 +81,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    //ユーザー編集
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('users.edit', ['user' => $user]);
+        //
     }
 
     /**
@@ -94,20 +93,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-    //ユーザー編集
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $validator = Validator::make($data, [
-            'screen_name'   => ['required', 'string', 'max:50', Rule::unique('users')->ignore($user->id)],
-            'profile_photo_pass' => ['file', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
-            'explain' => ['string', 'max:1000'],
-        ]);
-        $validator->validate();
-        $user->updateProfile($data);
-
-        return redirect('users/' . $user->id);
+        //
     }
 
     /**

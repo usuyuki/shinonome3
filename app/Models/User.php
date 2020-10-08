@@ -90,27 +90,4 @@ class User extends Authenticatable
     {
         return (bool) $this->followers()->where('following_id', $user_id)->first(['id']);
     }
-
-    //ユーザーアイコン画像関係つきのユーザー画像編集
-    public function updateProfile(array $params)
-    {
-        if (isset($params['profile_photo_path'])) {
-            $file_name = $params['profile_photo_path']->store('public/img/user/profile_photo_path');
-
-            $this::where('id', $this->id)
-                ->update([
-                    'name'          => $params['name'],
-                    'profile_photo_path' => basename($file_name),
-                    'explain'          => $params['explain'],
-                ]);
-        } else {
-            $this::where('id', $this->id)
-                ->update([
-                    'name'          => $params['name'],
-                    'explain'          => $params['explain'],
-                ]);
-        }
-
-        return;
-    }
 }
