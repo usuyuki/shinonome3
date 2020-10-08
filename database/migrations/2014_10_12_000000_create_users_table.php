@@ -14,8 +14,12 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+<<<<<<< HEAD
             //null禁止なのはタイムスタンプ、リメンバートークン、名前、IDのみ。他はnullおっけい
             $table->increments('id');
+=======
+            $table->bigIncrements('id');
+>>>>>>> parent of 812f147... fix マイグレーションできない問題の解消
             $table->string('name')->comment('twitterの名前から取得');
             $table->string('explain')->nullable()->comment('自己紹介');
             $table->string('twitter_id')->unique()->nullable()->comment('twitterの内部ID');

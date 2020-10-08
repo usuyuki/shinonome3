@@ -14,9 +14,9 @@ class CreateDirectMessagesTable extends Migration
     public function up()
     {
         Schema::create('direct_messages', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('send_user_id')->comment('送信者');
-            $table->unsignedInteger('receive_user_id')->comment('受信者');
+            $table->bigIncrements('id');
+            $table->bigInteger('send_user_id')->comment('送信者');
+            $table->bigInteger('receive_user_id')->comment('受信者');
             $table->text('message')->comment('メッセージ');
             $table->timestamps();
 

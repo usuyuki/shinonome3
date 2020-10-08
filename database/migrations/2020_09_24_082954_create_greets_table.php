@@ -14,9 +14,15 @@ class CreateGreetsTable extends Migration
     public function up()
     {
         Schema::create('greets', function (Blueprint $table) {
+<<<<<<< HEAD
             $table->increments('id');
             $table->unsignedInteger('user_id')->comment('ユーザID');
             $table->string('name')->nullable()->comment('ユーザ名');
+=======
+            $table->bigIncrements('id');
+            $table->integer('user_id')->comment('ユーザID');
+            $table->string('name')->null()->comment('ユーザ名');
+>>>>>>> parent of 812f147... fix マイグレーションできない問題の解消
             $table->text('greet')->comment('本文');
             //↓これでdeleted atを追加
             $table->softDeletes();

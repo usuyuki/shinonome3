@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWakesTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,13 @@ class CreateWakesTable extends Migration
      */
     public function up()
     {
-        Schema::create('wakes', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('user_id')->comment('ユーザID');
-            $table->date('get_up_time')->comment('起床時間');
+            $table->unsignedInteger('greet_id')->comment('あいさつID');
+            $table->string('message')->comment('本文');
+            $table->softDeletes();
             $table->timestamps();
-
-            $table->index('id');
-            $table->index('user_id');
-
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
         });
     }
 
@@ -38,6 +30,6 @@ class CreateWakesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wakes');
+        Schema::dropIfExists('comments');
     }
 }
