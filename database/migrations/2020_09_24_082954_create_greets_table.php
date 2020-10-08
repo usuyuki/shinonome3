@@ -16,7 +16,7 @@ class CreateGreetsTable extends Migration
         Schema::create('greets', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id')->comment('ユーザID');
-            $table->string('name')->null()->comment('ユーザ名');
+            $table->string('name')->nullable()->comment('ユーザ名');
             $table->text('greet')->comment('本文');
             //↓これでdeleted atを追加
             $table->softDeletes();
@@ -25,7 +25,6 @@ class CreateGreetsTable extends Migration
 
             //インデックスを作る→検索の高速化に貢献
             $table->index('id');
-            $table->index('name');
             $table->index('user_id');
             $table->index('greet');
 
@@ -33,11 +32,11 @@ class CreateGreetsTable extends Migration
             //他テーブルと関連付け 外部キー接続を宣言
             //cascade→親テーブルに対して更新を行うと子テーブルで同じ値を持つカラムの値も合わせて更新される
             //つまりユーザー消すとコメントも消せるはず？
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            // $table->foreign('user_id')
+            //     ->references('id')
+            //     ->on('users')
+            //     ->onDelete('cascade')
+            //     ->onUpdate('cascade');
         });
     }
 

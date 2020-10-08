@@ -14,6 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+            //null禁止なのはタイムスタンプ、リメンバートークン、名前、IDのみ。他はnullおっけい
             $table->increments('id');
             $table->string('name')->comment('twitterの名前から取得');
             $table->string('explain')->nullable()->comment('自己紹介');
@@ -39,8 +40,8 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('password')->nullable(false)->change();
-        });
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->string('password')->nullable(false)->change();
+        // });
     }
 }

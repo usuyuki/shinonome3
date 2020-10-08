@@ -25,17 +25,17 @@ class CreateDirectMessagesTable extends Migration
             $table->index('receive_user_id');
 
 
-            $table->foreign('send_user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            // $table->foreign('send_user_id')
+            //     ->references('id')
+            //     ->on('users')
+            //     ->onDelete('cascade')
+            //     ->onUpdate('cascade');
 
-            $table->foreign('receive_user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            // $table->foreign('receive_user_id')
+            //     ->references('id')
+            //     ->on('users')
+            //     ->onDelete('cascade')
+            //     ->onUpdate('cascade');
         });
     }
 
