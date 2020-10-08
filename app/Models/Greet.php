@@ -29,4 +29,14 @@ class Greet extends Model
     {
         return $this->hasMany(Favorite::class);
     }
+    //ユーザーページ関連
+    public function getUserTimeLine(Int $user_id)
+    {
+        return $this->where('user_id', $user_id)->orderBy('created_at', 'DESC')->paginate(50);
+    }
+    //ユーザーページ関連
+    public function getGreetCount(Int $user_id)
+    {
+        return $this->where('user_id', $user_id)->count();
+    }
 }

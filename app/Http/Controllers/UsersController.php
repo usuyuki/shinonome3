@@ -55,11 +55,26 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user, Greet $greet, Follower $follower)
     {
-        //
-    }
+        $login_user = auth()->user();
+        $is_following = $login_user->isFollowing($user->id);
+        $is_followed = $login_user->isFollowed($user->id);
+        $timelines = $greet->getUserTimeLine($user->id);
+        $greet_count = $greet->getGreetCount($user->id);
+        $follow_count = $follower->getFollowCount($user->id);
+        $follower_count = $follower->getFollowerCount($user->id);
 
+        return view('users.show', [
+            'user'           => $user,
+            'is_following'   => $is_following,
+            'is_followed'    => $is_followed,
+            'timelines'      => $timelines,
+            'greet_count'    => $greet_count,
+            'follow_count'   => $follow_count,
+            'follower_count' => $follower_count
+        ]);
+    }
     /**
      * Show the form for editing the specified resource.
      *
