@@ -14,7 +14,9 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            //null禁止なのはタイムスタンプ、リメンバートークン、名前、IDのみ。他はnullおっけい
+            $table->increments('id');
+
             $table->string('name')->comment('twitterの名前から取得');
             $table->string('explain')->nullable()->comment('自己紹介');
             $table->string('twitter_id')->unique()->nullable()->comment('twitterの内部ID');
@@ -24,8 +26,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->nullable()->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable()->change();
+            $table->unsignedInteger('set1')->nullable()->comment('設定1');
+            $table->unsignedInteger('set2')->nullable()->comment('設定1');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->index('id');
         });
     }
 
