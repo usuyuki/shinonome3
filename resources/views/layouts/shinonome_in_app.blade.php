@@ -220,7 +220,9 @@
                     @auth
                     <div class="user-icon">
                         {{-- <img src="{{ asset($user->profile_photo_path) }}" class="rounded-circle" width="50" height="50"> --}}
+                        <a href="{{ url('users/' . Auth::user()->id) }}" class="text-secondary">
                         <img class="profile_photo" src="{{ Auth::user()->profile_photo_path }}" />
+                        </a>
                     </div>
 
                     <div class="user-name">

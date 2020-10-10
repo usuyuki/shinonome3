@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('layouts.shinonome_in_app')
+@section('title','ご利用にあたって/しののめ')
 @section('content')
 
  <!-- 投稿コーナー -->
@@ -31,7 +31,7 @@
             <div class="col-md-12 text-right">
                 <p class="mb-4 text-danger">140文字以内</p>
                 <button type="submit" class="btn btn-primary">
-                    ツイートする
+                    あいさつする
                 </button>
             </div>
         </div>
@@ -51,10 +51,18 @@
                 <div class="col-md-8 mb-3">
                     <div class="card">
                         <div class="card-haeder p-3 w-100 d-flex">
+                            @component('components.explain')
+        @slot('title')
+        {{$timeline->greet}}
+        @endslot
+        @slot('explain')
+        これはメッセージの表示です。
+        @endslot
+    @endcomponent
                             <img src="{{$timeline->user->profile_photo_path }}" class="rounded-circle" width="50" height="50">
                             <div class="ml-2 d-flex flex-column">
 
-                                <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary"><p class="mb-0">{{ $timeline->user->name }}</p></a>
+                                 <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary"><p class="mb-0">{{ $timeline->user->name }}</p></a>
                             </div>
                             <div class="d-flex justify-content-end flex-grow-1">
                                 <p class="mb-0 text-secondary">{{ $timeline->created_at->format('Y-m-d H:i') }}</p>
