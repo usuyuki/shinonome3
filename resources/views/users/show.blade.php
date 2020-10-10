@@ -10,8 +10,9 @@
                         <img src="{{ asset('storage/profile_photo_path/' .$user->profile_photo_path) }}" class="rounded-circle" width="100" height="100">
                         <div class="mt-3 d-flex flex-column">
                             <h4 class="mb-0 font-weight-bold">{{ $user->name }}</h4>
-                            <span class="text-secondary">{{ $user->profile_photo_path }}</span>
+                            <span class="text-secondary">しののめid:{{ $user->id }}</span>
                         </div>
+                        <p>{{$user->explain}}</p>
                     </div>
                     <div class="p-3 d-flex flex-column justify-content-between">
                         <div class="d-flex">

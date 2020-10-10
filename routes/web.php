@@ -33,7 +33,10 @@ Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
 
 Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
 
-Route::post('/greet/delate/{greet_id?}', [GreetController::class, 'delateGreet'])->name('greet.delate');
+Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet_all');
+
+
+Route::post('/greet/delate/{greet_id?}', [GreetController::class, 'delateGreet'])->name('greet_delate');
 //ログインしてない場合→ログインに遷移する！！！
 Route::group(['middleware' => 'auth'], function () {
 
@@ -49,8 +52,8 @@ Route::group(['middleware' => 'auth'], function () {
     //コチャ '/directmessage'
     Route::get('/directmessage', [DMController::class, 'directmessage'])->name('directmessage');
     //プロフィールと設定'/setting'
-    Route::get('/setting', [SettingController::class, 'showSetting'])->name('setting');
-    Route::post('/setting', [SettingController::class, 'postSetting'])->name('setting');
+    Route::get('/setting', [SettingController::class, 'showSetting'])->name('setting_get');
+    Route::post('/setting', [SettingController::class, 'postSetting'])->name('setting_post');
     //ヒストリーと起床時間'/record'
     Route::get('/record', [RecordController::class, 'record'])->name('record');
 
