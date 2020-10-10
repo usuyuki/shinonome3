@@ -82,6 +82,7 @@
 
     </div>
 </div>
+
 <div class="main-explain">
     <h2><span class="orange-line">使い方</span></h2>
     <div class="explain-1">
@@ -93,6 +94,45 @@
         <h3>2.あいさつする</h3>
         <p>会員登録後は左メニューの「あいさつ」よりあいさつが利用できます。<br>現状はただの掲示場ですが、今後はフォロー関係にある人のみのあいさつを表示する仕様も検討しています。</p>
     </div>
-    <p class="kome">InternetExploreでは正常にページが閲覧できない可能性があります。他のブラウザをご利用ください。</p>
 </div>
+
+<p>　</p>
+
+<div class="main-explain">
+    <h3><span class="orange-line">制作にあたって参考にさせていただいた記事</span></h3>
+    <p class="main-explain-sub">数多くの記事を参考に制作しましたが、特に参考にした記事について恐縮ながら挙げさせていただきます。</p>
+    
+    
+    <div class="reference-title">
+        <a href="https://qiita.com/namizatork/items/d79017aa474966244073" target="_blank"><p>【全6回】Laravel5.8でTwitterっぽいSNSツールを作る（第1回DB設計とMigration）</p></a>
+    </div>
+    <div class="referance-name">
+        <p>Namizato様</p>
+    </div>
+
+
+    <div class="reference-title">
+        <a href="https://wayasblog.com/laravel-twitter" target="_blank"><p>【Laravel7】簡単なTwitter風のSNSアプリの作成手順【初心者向け】</p></a>
+    </div>
+    <div class="referance-name">
+        <p>わや様</p>
+    </div>
+
+    <div class="reference-title">
+        <a href="https://note.com/mukae9/n/n91ff7bccfcd8" target="_blank"><p>Laravel6.0+SocialiteでTwitterログインを実装する</p></a>
+    </div>
+    <div class="referance-name">
+        <p>mukae様</p>
+    </div>
+    
+ 
+</div>
+
+
+
+
+
+
+
+<p class="kome">InternetExploreでは正常にページが閲覧できない可能性があります。他のブラウザをご利用ください。</p>
 @endsection
