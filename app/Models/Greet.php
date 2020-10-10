@@ -51,13 +51,11 @@ class Greet extends Model
 
 
 
-    //あいさつをDBに保存
-    public function GreetStore(Int $user_id, array $data)
-    {
-        $this->user_id = $user_id;
-        $this->text = $data['text'];
-        $this->save();
 
-        return;
+
+    //あいさつ削除
+    public function greetDestroy(Int $user_id, Int $greet_id)
+    {
+        return $this->
     }
 }

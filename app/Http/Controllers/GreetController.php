@@ -79,8 +79,10 @@ class GreetController extends Controller
 
 
     // ツイート削除処理
-    public function destroy($id)
+    public function delateGreet(Request $request)
     {
-        //
+        $user = auth()->user();
+        Greet::where('user_id', $user->id)->where('id', $request->greet_id)->delete();
+        return back();
     }
 }

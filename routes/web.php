@@ -33,6 +33,7 @@ Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
 
 Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
 
+Route::post('/greet/delate/{greet_id?}', [GreetController::class, 'delateGreet'])->name('greet.delate');
 //ログインしてない場合→ログインに遷移する！！！
 Route::group(['middleware' => 'auth'], function () {
 

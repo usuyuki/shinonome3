@@ -70,11 +70,11 @@
                                         <i class="fas fa-ellipsis-v fa-fw"></i>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <form method="POST" action="{{ url('tweets/' .$timeline->id) }}" class="mb-0">
+                                        <form method="POST" action='/greet/delate/?greet_id={{$timeline->id}}' class="mb-0">
                                             @csrf
-                                            @method('DELETE')
+                                            {{-- @method('DELETE') --}}
 
-                                            <a href="{{ url('tweets/' .$timeline->id .'/edit') }}" class="dropdown-item"></a>
+                                           
                                             <button type="submit" class="dropdown-item del-btn">削除</button>
                                         </form>
                                     </div>
