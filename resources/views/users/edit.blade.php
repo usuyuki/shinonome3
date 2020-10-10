@@ -13,7 +13,7 @@
                         @method('PUT')
 
                         <div class="form-group row align-items-center">
-                            <label for="profile_photo_path" class="col-md-4 col-form-label text-md-right">{{ __('Profile Image') }}</label>
+                            <label for="profile_photo_path" class="col-md-4 col-form-label text-md-right">画像</label>
 
                             <div class="col-md-6 d-flex align-items-center">
                                 <img src="{{ asset('storage/profile_photo_path/' .$user->profile_photo_path) }}" class="mr-2 rounded-circle" width="80" height="80" alt="profile_photo_path">
@@ -28,12 +28,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="screen_name" class="col-md-4 col-form-label text-md-right">{{ __('Account Name') }}</label>
+                            <label for="profile_photo_path" class="col-md-4 col-form-label text-md-right">自己紹介</label>
 
                             <div class="col-md-6">
-                                <input id="screen_name" type="text" class="form-control @error('screen_name') is-invalid @enderror" name="screen_name" value="{{ $user->screen_name }}" required autocomplete="screen_name" autofocus>
-
-                                @error('screen_name')
+                                <!-- <input id="profile_photo_path" type="text"  name="explain" value="{{ $user->explain }}" required autocomplete="explain" autofocus> -->
+                                <textarea id="profile_photo_path" class="form-control @error('explain') is-invalid @enderror" cols="120" rows="20" class="moziwaku" name="explain" maxlength="99999" autocomplete="explain" autofocus>{{$user->explain}}</textarea>
+                                @error('explain')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -67,7 +67,7 @@
                                 </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

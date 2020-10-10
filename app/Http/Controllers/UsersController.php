@@ -93,10 +93,10 @@ class UsersController extends Controller
     {
         $data = $request->all();
         $validator = Validator::make($data, [
-            'screen_name'   => ['required', 'string', 'max:50', Rule::unique('users')->ignore($user->id)],
+
             'name'          => ['required', 'string', 'max:255'],
             'profile_photo_path' => ['file', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
-            'email'         => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)]
+            'explain'         => ['string', 'max:300',]
         ]);
         $validator->validate();
         $user->updateProfile($data);

@@ -36,7 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //CRUDルーティングを一度に行うRoute::resource
     //いらないメソッドまでリンク作られてしまうのでonly使うことでエラーを防止する
-    Route::resource('users', UsersController::class, ['only' => ['index', 'show', 'update']]);
+    Route::resource('users', UsersController::class, ['only' => ['index', 'show', 'edit', 'update']]);
 
     // フォロー/フォロー解除を追加
     Route::post('users/{user}/follow', [UsersController::class, 'follow'])->name('follow');

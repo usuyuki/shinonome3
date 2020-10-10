@@ -10,7 +10,7 @@
                         <img src="{{ asset('storage/profile_photo_path/' .$user->profile_photo_path) }}" class="rounded-circle" width="100" height="100">
                         <div class="mt-3 d-flex flex-column">
                             <h4 class="mb-0 font-weight-bold">{{ $user->name }}</h4>
-                            <span class="text-secondary">{{ $user->screen_name }}</span>
+                            <span class="text-secondary">{{ $user->profile_photo_path }}</span>
                         </div>
                     </div>
                     <div class="p-3 d-flex flex-column justify-content-between">
@@ -66,7 +66,7 @@
                     <img src="{{ asset('storage/profile_photo_path/' .$user->profile_photo_path) }}" class="rounded-circle" width="50" height="50">
                     <div class="ml-2 d-flex flex-column flex-grow-1">
                         <p class="mb-0">{{ $timeline->user->name }}</p>
-                        <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary">{{ $timeline->user->screen_name }}</a>
+                        <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary">{{ $timeline->user->profile_photo_path }}</a>
                     </div>
                     <div class="d-flex justify-content-end flex-grow-1">
                         <p class="mb-0 text-secondary">{{ $timeline->created_at->format('Y-m-d H:i') }}</p>
