@@ -27,18 +27,20 @@ use App\Http\Controllers\FavoritesController;
 
 //ホーム
 Route::get('/home', [IndexController::class, 'home'])->name('home');
-//あいさつ'/greet'
-// Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
-Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
 
-Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
 
-Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet_all');
 
 
 Route::post('/greet/delate/{greet_id?}', [GreetController::class, 'delateGreet'])->name('greet_delate');
 //ログインしてない場合→ログインに遷移する！！！
 Route::group(['middleware' => 'auth'], function () {
+
+    //あいさつ
+    Route::get('/greet/all', [GreetController::class, 'allShowGreetPage'])->name('greet_all');
+    Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
+
+    Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
+
 
     //CRUDルーティングを一度に行うRoute::resource
     //いらないメソッドまでリンク作られてしまうのでonly使うことでエラーを防止する

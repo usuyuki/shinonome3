@@ -13,14 +13,14 @@ use App\Models\Follower;
 class GreetController extends Controller
 {
 
-    //古い処理
-    // public function showGreetPage()
-    // {
-    //     $greets = Greet::latest()->get();
-    //     // $user = User::where('id', '=', $greets->user_id)->first();
 
-    //     return view('main.left.greet', ['greets' => $greets,]);
-    // }
+    public function allShowGreetPage()
+    {
+        $greets = Greet::latest()->get();
+        // $user = User::where('id', '=', $greets->user_id)->first();
+
+        return view('main.left.greet', ['greets' => $greets,]);
+    }
 
     public function postGreet(Request $request)
     {

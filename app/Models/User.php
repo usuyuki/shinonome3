@@ -24,6 +24,9 @@ class User extends Authenticatable
         'password',
         'profile_photo_path',
         'twitter_name',
+        'twitter_id',
+        'twitter_name',
+        'twitter_token',
     ];
 
     /**
@@ -34,6 +37,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+
+
     ];
 
     /**

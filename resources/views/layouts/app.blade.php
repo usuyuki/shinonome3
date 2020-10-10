@@ -58,7 +58,7 @@
                         @endif
                         @else
                         <li class="nav-item">
-                            <img src="{{ auth()->user()->profile_photo_path) }}" class="rounded-circle" width="50" height="50">
+                            <img src="{{ auth()->user()->profile_photo_path}}" class="rounded-circle" width="50" height="50">
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
