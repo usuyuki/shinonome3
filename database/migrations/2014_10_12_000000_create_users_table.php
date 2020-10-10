@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable()->change();
             $table->unsignedInteger('set1')->nullable()->comment('設定1');
             $table->unsignedInteger('set2')->nullable()->comment('設定1');
-            // $table->rememberToken(); ←現在廃止（twitterのトークンがあるため必要性がそもそもない)
+            $table->rememberToken(); //（twitterのトークンがあるため必要性がそもそもないが今後会員登録採用のために枠だけ残しておく)
             $table->timestamps();
 
             $table->index('id');
