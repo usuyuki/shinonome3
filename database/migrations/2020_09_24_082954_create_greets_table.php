@@ -15,7 +15,7 @@ class CreateGreetsTable extends Migration
     {
         Schema::create('greets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->comment('ユーザID');
+            $table->unsignedInteger('user_id')->comment('ユーザID');
             $table->string('name')->null()->comment('ユーザ名');
 
             $table->text('greet')->comment('本文');

@@ -18,8 +18,8 @@ class CreateFollowersTable extends Migration
              * 自分がフォローしているユーザーのあいさつを表示するとき
              * 自分がfollowing_id フォローした相手がfollowed_id
              */
-            $table->bigInteger('following_id')->comment('フォローしているユーザID');
-            $table->bigInteger('followed_id')->comment('フォローされているユーザID');
+            $table->unsignedInteger('following_id')->comment('フォローしているユーザID');
+            $table->unsignedInteger('followed_id')->comment('フォローされているユーザID');
             $table->timestamps();
 
             //インデックスで高速化
