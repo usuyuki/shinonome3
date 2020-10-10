@@ -7,17 +7,20 @@ use \App\Models\Greet;
 use \App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
+
+use App\Models\Follower;
+
 class GreetController extends Controller
 {
 
     //古い処理
-    public function showGreetPage()
-    {
-        $greets = Greet::latest()->get();
-        // $user = User::where('id', '=', $greets->user_id)->first();
+    // public function showGreetPage()
+    // {
+    //     $greets = Greet::latest()->get();
+    //     // $user = User::where('id', '=', $greets->user_id)->first();
 
-        return view('main.left.greet', ['greets' => $greets,]);
-    }
+    //     return view('main.left.greet', ['greets' => $greets,]);
+    // }
 
     public function postGreet(Request $request)
     {
@@ -36,11 +39,27 @@ class GreetController extends Controller
 
 
     // 一覧表示
+    public function showGreetPage(Greet $greet, Follower $follower)
+    {
+        $user = auth()->user();
+        $follow_ids = $follower->followingIds($user->id);
+        // followed_idだけ抜き出す
+        $following_ids = $follow_ids->pluck('followed_id')->toArray();
+
+        $timelines = $greet->getTimelines($user->id, $following_ids);
+
+        return view('greet.index', [
+            'user'      => $user,
+            'timelines' => $timelines
+        ]);
+    }
+
+
+    // あいさつ入力画面
     public function index()
     {
         //
     }
-
     // あいさつ入力画面
     public function create()
     {

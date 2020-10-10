@@ -28,7 +28,9 @@ use App\Http\Controllers\UsersController;
 //ホーム
 Route::get('/home', [IndexController::class, 'home'])->name('home');
 //あいさつ'/greet'
+// Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
 Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
+
 Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
 
 //ログインしてない場合→ログインに遷移する！！！
