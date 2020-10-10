@@ -17,6 +17,7 @@ class Greet extends Model
     protected $fillable = [
         'name',
         'greet',
+        'user_id',
     ];
 
     public function user()
@@ -46,5 +47,17 @@ class Greet extends Model
         // 自身とフォローしているユーザIDを結合する
         $follow_ids[] = $user_id;
         return $this->whereIn('user_id', $follow_ids)->orderBy('created_at', 'DESC')->paginate(50);
+    }
+
+
+
+    //あいさつをDBに保存
+    public function GreetStore(Int $user_id, array $data)
+    {
+        $this->user_id = $user_id;
+        $this->text = $data['text'];
+        $this->save();
+
+        return;
     }
 }
