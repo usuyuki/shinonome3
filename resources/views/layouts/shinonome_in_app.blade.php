@@ -16,8 +16,12 @@
     </script>
 
     <meta charset="utf-8">
+    
     <title>@yield('title')</title>
     <meta name="description" content="しののめは朝に特化した朝限定のSNSです。" />
+    
+    <!-- CSS書くときのおまじない -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- ファビコン -->
     <meta name="msapplication-square70x70logo" content="/img/favicons/site-tile-70x70.png">
     <meta name="msapplication-square150x150logo" content="/img/favicons/site-tile-150x150.png">
