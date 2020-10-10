@@ -27,7 +27,7 @@ class GreetController extends Controller
 
         Greet::create([
             'user_id' => Auth::user()->id,
-            'name' => Auth::user()->name,
+            // 'name' => Auth::user()->name,
             'greet' => $request->greet,
         ]);
         return back();

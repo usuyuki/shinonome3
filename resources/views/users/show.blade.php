@@ -42,7 +42,7 @@
                         </div>
                         <div class="d-flex justify-content-end">
                             <div class="p-2 d-flex flex-column align-items-center">
-                                <p class="font-weight-bold">ツイート数</p>
+                                <p class="font-weight-bold">あいさつ数</p>
                                 <span>{{ $greet_count }}</span>
                             </div>
                             <div class="p-2 d-flex flex-column align-items-center">
@@ -63,7 +63,7 @@
         <div class="col-md-8 mb-3">
             <div class="card">
                 <div class="card-haeder p-3 w-100 d-flex">
-                    <img src="{{ asset('storage/profile_photo_path/' .$user->profile_photo_path) }}" class="rounded-circle" width="50" height="50">
+                    <img src="{{ asset($user->profile_photo_path) }}" class="rounded-circle" width="50" height="50">
                     <div class="ml-2 d-flex flex-column flex-grow-1">
                         <p class="mb-0">{{ $timeline->user->name }}</p>
                         <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary">{{ $timeline->user->profile_photo_path }}</a>

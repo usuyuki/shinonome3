@@ -12,7 +12,8 @@
                         @csrf
                         @method('PUT')
 
-                        <div class="form-group row align-items-center">
+                        {{-- ユーザー画像の変更はなし。 --}}
+                        {{-- <div class="form-group row align-items-center">
                             <label for="profile_photo_path" class="col-md-4 col-form-label text-md-right">画像</label>
 
                             <div class="col-md-6 d-flex align-items-center">
@@ -25,8 +26,9 @@
                                 </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
+                        {{-- 自己紹介 --}}
                         <div class="form-group row">
                             <label for="profile_photo_path" class="col-md-4 col-form-label text-md-right">自己紹介</label>
 

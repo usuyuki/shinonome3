@@ -215,7 +215,7 @@
                     @if (Route::has('login'))
                     @auth
                     <div class="user-icon">
-
+                        {{-- <img src="{{ asset($user->profile_photo_path) }}" class="rounded-circle" width="50" height="50"> --}}
                         <img class="profile_photo" src="{{ Auth::user()->profile_photo_path }}" />
                     </div>
 
