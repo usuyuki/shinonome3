@@ -9,7 +9,7 @@ use App\Http\Controllers\DMController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\RecordController;
 use App\Http\Controllers\UsersController;
-
+use App\Http\Controllers\FavoritesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +53,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/setting', [SettingController::class, 'postSetting'])->name('setting');
     //ヒストリーと起床時間'/record'
     Route::get('/record', [RecordController::class, 'record'])->name('record');
+
+
+    //あいさつページいいね機能
+    Route::resource('favorites', FavoritesController::class, ['only' => ['store', 'destroy']]);
 });
 
 //プライバイシーポリシー '/privacypolicy'

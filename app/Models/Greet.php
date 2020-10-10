@@ -48,14 +48,4 @@ class Greet extends Model
         $follow_ids[] = $user_id;
         return $this->whereIn('user_id', $follow_ids)->orderBy('created_at', 'DESC')->paginate(50);
     }
-
-
-
-
-
-    //あいさつ削除
-    public function greetDestroy(Int $user_id, Int $greet_id)
-    {
-        return $this->
-    }
 }
