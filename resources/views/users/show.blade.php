@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="d-inline-flex">
                     <div class="p-3 d-flex flex-column">
-                        <img src="{{ $user->profile_image }}" class="rounded-circle" width="100" height="100">
+                        <img src="{{ asset('storage/profile_photo_path/' .$user->profile_photo_path) }}" class="rounded-circle" width="100" height="100">
                         <div class="mt-3 d-flex flex-column">
                             <h4 class="mb-0 font-weight-bold">{{ $user->name }}</h4>
                             <span class="text-secondary">{{ $user->screen_name }}</span>
@@ -63,7 +63,7 @@
         <div class="col-md-8 mb-3">
             <div class="card">
                 <div class="card-haeder p-3 w-100 d-flex">
-                    <img src="{{ $user->profile_image }}" class="rounded-circle" width="50" height="50">
+                    <img src="{{ asset('storage/profile_photo_path/' .$user->profile_photo_path) }}" class="rounded-circle" width="50" height="50">
                     <div class="ml-2 d-flex flex-column flex-grow-1">
                         <p class="mb-0">{{ $timeline->user->name }}</p>
                         <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary">{{ $timeline->user->screen_name }}</a>
@@ -82,11 +82,11 @@
                             <i class="fas fa-ellipsis-v fa-fw"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <form method="POST" action="{{ url('tweets/' .$timeline->id) }}" class="mb-0">
+                            <form method="POST" action="{{ url('greets/' .$timeline->id) }}" class="mb-0">
                                 @csrf
                                 @method('DELETE')
 
-                                <a href="{{ url('tweets/' .$timeline->id .'/edit') }}" class="dropdown-item">編集</a>
+                                <a href="{{ url('greets/' .$timeline->id .'/edit') }}" class="dropdown-item">編集</a>
                                 <button type="submit" class="dropdown-item del-btn">削除</button>
                             </form>
                         </div>
