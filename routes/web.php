@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     //あいさつ
     Route::get('/greet/all', [GreetController::class, 'allShowGreetPage'])->name('greet_all');
     Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
-
+    Route::post('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
     Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
 
 
