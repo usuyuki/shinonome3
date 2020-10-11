@@ -175,7 +175,8 @@ svg {
 }
 
 .login-btn:hover a {
-  background: #1b1b1b;
+  background: #ff8000;
+  border: 1px solid #ff8000;
   color: #fff;
   cursor: pointer;
   text-decoration: none;
@@ -194,7 +195,8 @@ svg {
 }
 
 .register-btn:hover a {
-  background: #1b1b1b;
+  background: #ff8000;
+  border: 1px solid #ff8000;
   color: #fff;
   cursor: pointer;
   text-decoration: none;
@@ -213,7 +215,8 @@ svg {
 }
 
 .logout-btn:hover a {
-  background: #1b1b1b;
+  background: #ff8000;
+  border: 1px solid #ff8000;
   color: #fff;
   cursor: pointer;
   text-decoration: none;

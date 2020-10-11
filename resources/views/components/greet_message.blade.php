@@ -4,30 +4,32 @@
 }
 .greet-content{
     border:1px solid black;
-    width: 800px;
-    background-color:#87C9B6; 
+    width: 750px;
+    background-color:#C7EEDB; 
     border-radius: 2%;
+    margin:0 auto;
 
 
 }
 .greet-top{
-    width: 800px;
-    height:80px;
-    border:1px solid black;
+    width: 98%;
+    height:60px;
+    /* border:1px solid black; */
 }
 
 .greet-center{
-    border:1px solid black;
-    text-align: center;
+    /* border:1px solid black; */
+    text-align: left;
     /* margin:40px 40px; */
-    width: 800px;
+    width: 60%;
+    margin:0 auto;
    
 }
 .greet-bottom{
-    width: 800px;
-    border:1px solid black;
+    width: 98%;
+    /* border:1px solid black; */
     text-align: right;
-
+    font-size:10px;
 }
 .greet-bottom p{
     margin-bottom: 0px;
@@ -35,7 +37,7 @@
 .greet-icon{
     float: left;
     /* border: 1px solid blue; */
-    margin:20px 20px;
+    margin:0px 20px;
 
     background-position: center ;
     
@@ -46,11 +48,16 @@
 }
 
 .greet-name{
-    margin:20px 0;
+    margin:0 0;
     float:left;
 }
 .greet-name a{
     text-decoration: none;
+    
+    color:#30736A;
+}
+.greet-name a:hover{
+
     
     color:black;
 }
@@ -61,13 +68,30 @@
 }
 .greet-delate{
     float:left;
-    margin-top:20px;
-    margin-left:400px;
+
+    margin-left:40%;
+}
+.greet-delate svg{
+    fill:#87C9B6;
+}
+.greet-delate svg:hover{
+    fill:#30736A;
+}
+.greet-delate span{
+    display: inline-block;
+    margin-bottom: 10px;
 }
 .greet-like{
     position: relative;
     top:20px;
-    left:400px;
+    left:20px;
+    
+}
+.greet-like svg{
+    fill:plum;
+}
+.greet-like svg:hover{
+    fill:rgb(202, 114, 202);
 }
 .like-btn{
     
