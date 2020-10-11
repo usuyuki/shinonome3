@@ -18,6 +18,7 @@ class Greet extends Model
         'name',
         'greet',
         'user_id',
+        'deleted_at',
     ];
 
     public function user()

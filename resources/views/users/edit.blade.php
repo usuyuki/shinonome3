@@ -3,6 +3,9 @@
 @section('title','ユーザー編集/しののめ')
 
 @section('content')
+<div class="main-title">
+    <h1><span class="orange-line">ユーザー編集</span></h1>
+</div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
