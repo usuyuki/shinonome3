@@ -13,7 +13,7 @@ class Greet extends Model
     //これは消してもDB上には残る仕組み。
     use SoftDeletes;
 
-    //登録できるカラムの設定　ホワイトリスト
+    //登録できるカラムの設定 ホワイトリスト
     protected $fillable = [
         'name',
         'greet',
