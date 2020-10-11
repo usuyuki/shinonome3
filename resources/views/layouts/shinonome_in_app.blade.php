@@ -70,6 +70,9 @@
 
     <!-- CSS読み込み -->
     <link href="/css/shinonome_in_app.css" rel="stylesheet">
+    
+    <!-- Bootstrap読み込み -->
+{{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <!-- JS読み込み -->
     <script type="text/javascript" src="/js/shinonomeapp.js"></script>
 
