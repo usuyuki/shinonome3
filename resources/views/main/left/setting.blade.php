@@ -204,7 +204,7 @@
     </div>
     <div class="user-list">
 
-        <a href="{{ url('users') }}">他のユーザーを探す </a>
+        <a href='/users'>他のユーザーを探す </a>
     </div>
 
 </div>

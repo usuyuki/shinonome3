@@ -37,26 +37,20 @@ Route::group(['middleware' => 'auth'], function () {
     //あいさつ
     Route::get('/greet/all', [GreetController::class, 'allShowGreetPage'])->name('greet_all');
     Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
-    Route::post('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
-    Route::delete('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
-
-    Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
+    Route::post('/greet/sub', [GreetController::class, 'showGreetPage'])->name('greet');
 
     Route::post('/greet/delate/{greet_id?}', [GreetController::class, 'delateGreet'])->name('greet_delate');
 
+    //あいさつページいいね機能
+    Route::resource('favorites', FavoritesController::class, ['only' => ['store', 'destroy']]);
     //CRUDルーティングを一度に行うRoute::resource
     //いらないメソッドまでリンク作られてしまうのでonly使うことでエラーを防止する
     Route::resource('users', UsersController::class, ['only' => ['index', 'show', 'edit', 'update']]);
 
-    //あいさつページいいね機能
-    // Route::resource('favorites', FavoritesController::class, ['only' => ['store', 'destroy']]);
-    Route::post('favorites', [FavoritesController::class, 'store']);
-    Route::delete('favorites', [FavoritesController::class, 'destroy']);
-
-
     // フォロー/フォロー解除を追加
     Route::post('users/{user}/follow', [UsersController::class, 'follow'])->name('follow');
     Route::delete('users/{user}/unfollow', [UsersController::class, 'unfollow'])->name('unfollow');
+
 
     //original
     //コチャ '/directmessage'

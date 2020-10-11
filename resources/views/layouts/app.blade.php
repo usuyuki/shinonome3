@@ -25,13 +25,13 @@
 
 <body>
     <div id="app">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="/">
             <!-- {{ config('app.name', 'Laravel') }} -->
             <img src="/img/logos/しののめロゴ20200924.png" width=150px height=32px class="logo" alt="しののめのロゴです">
         </a>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="/">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -66,7 +66,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a href="{{ url('users/' .auth()->user()->id) }}" class="dropdown-item">プロフィール</a>
+                                <a href="/users/'{{auth()->user()->id }}" class="dropdown-item">プロフィール</a>
                                 <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}

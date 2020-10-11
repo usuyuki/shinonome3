@@ -21,7 +21,7 @@
                         <div class="d-flex">
                             <div>
                                 @if ($user->id === Auth::user()->id)
-                                <a href="{{ url('users/' .$user->id .'/edit') }}" class="btn btn-primary">プロフィールを編集する</a>
+                                <a href='/users/ {{$user->id}}/edit' class="btn btn-primary">プロフィールを編集する</a>
                                 @else
                                 @if ($is_following)
                                 <form action="{{ route('unfollow', ['user' => $user->id])  }}" method="POST">
@@ -101,14 +101,14 @@
                            <!-- いいねコーナー -->
                            <div class="d-flex align-items-center">
                             @if (!in_array($user->id, array_column($timeline->favorites->toArray(), 'user_id'), TRUE))
-                                <form method="POST" action="{{ url('favorites/') }}" class="mb-0">
+                                <form method="POST" action="/favorites" class="mb-0">
                                     @csrf
 
                                     <input type="hidden" name="greet_id" value="{{ $timeline->id }}">
                                     <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart fa-fw"></i></button>
                                 </form>
                             @else
-                                <form method="POST" action="{{ url('favorites/' .array_column($timeline->favorites->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
+                                <form method="POST" action="/favorites/' {{array_column($timeline->favorites->toArray(), 'id', 'user_id')[$user->id] }}" class="mb-0">
                                     @csrf
                                     @method('DELETE')
 
