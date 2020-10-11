@@ -1,4 +1,7 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
+@extends('layouts.shinonome_in_app')
+@section('title','ユーザー/しののめ')
+
 
 @section('content')
 <div class="container">

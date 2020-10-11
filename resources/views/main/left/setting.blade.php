@@ -150,6 +150,14 @@
         cursor: pointer;
         text-decoration: none;
     }
+    .user-list{
+      
+    }
+    .user-list a{
+        text-aligin:center;
+        text-decoration: none;
+        color:blue;
+    }
 </style>
 
 <div class="main-title">
@@ -194,5 +202,10 @@
             <p>あなたの「しののめ」登録日:{{$user->created_at}}</p>
         </div>
     </div>
+    <div class="user-list">
+
+        <a href="{{ url('users') }}">他のユーザーを探す </a>
+    </div>
+
 </div>
 @endsection
