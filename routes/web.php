@@ -8,7 +8,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DMController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\RecordController;
-
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\FavoritesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,19 +27,41 @@ use App\Http\Controllers\RecordController;
 
 //ホーム
 Route::get('/home', [IndexController::class, 'home'])->name('home');
-//あいさつ'/greet'
-Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
-Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
 
+
+
+
+Route::post('/greet/delate/{greet_id?}', [GreetController::class, 'delateGreet'])->name('greet_delate');
 //ログインしてない場合→ログインに遷移する！！！
 Route::group(['middleware' => 'auth'], function () {
+
+    //あいさつ
+    Route::get('/greet/all', [GreetController::class, 'allShowGreetPage'])->name('greet_all');
+    Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
+
+    Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
+
+
+    //CRUDルーティングを一度に行うRoute::resource
+    //いらないメソッドまでリンク作られてしまうのでonly使うことでエラーを防止する
+    Route::resource('users', UsersController::class, ['only' => ['index', 'show', 'edit', 'update']]);
+
+    // フォロー/フォロー解除を追加
+    Route::post('users/{user}/follow', [UsersController::class, 'follow'])->name('follow');
+    Route::delete('users/{user}/unfollow', [UsersController::class, 'unfollow'])->name('unfollow');
+
+    //original
     //コチャ '/directmessage'
     Route::get('/directmessage', [DMController::class, 'directmessage'])->name('directmessage');
     //プロフィールと設定'/setting'
-    Route::get('/setting', [SettingController::class, 'showSetting'])->name('setting');
-    Route::post('/setting', [SettingController::class, 'postSetting'])->name('setting');
+    Route::get('/setting', [SettingController::class, 'showSetting'])->name('setting_get');
+    Route::post('/setting', [SettingController::class, 'postSetting'])->name('setting_post');
     //ヒストリーと起床時間'/record'
     Route::get('/record', [RecordController::class, 'record'])->name('record');
+
+
+    //あいさつページいいね機能
+    Route::resource('favorites', FavoritesController::class, ['only' => ['store', 'destroy']]);
 });
 
 //プライバイシーポリシー '/privacypolicy'

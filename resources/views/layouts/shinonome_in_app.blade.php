@@ -70,6 +70,9 @@
 
     <!-- CSS読み込み -->
     <link href="/css/shinonome_in_app.css" rel="stylesheet">
+    
+    <!-- Bootstrap読み込み -->
+{{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <!-- JS読み込み -->
     <script type="text/javascript" src="/js/shinonomeapp.js"></script>
 
@@ -215,12 +218,12 @@
                         <a href="{{ route('register') }}">新規登録してあいさつする</a>
                     </div>
 
-                    @endguest
-                    @if (Route::has('login'))
-                    @auth
+                    @else
                     <div class="user-icon">
-
+                        {{-- <img src="{{ asset($user->profile_photo_path) }}" class="rounded-circle" width="50" height="50"> --}}
+                        <a href="{{ url('users/' . Auth::user()->id) }}" class="text-secondary">
                         <img class="profile_photo" src="{{ Auth::user()->profile_photo_path }}" />
+                        </a>
                     </div>
 
                     <div class="user-name">
@@ -230,16 +233,20 @@
                     </div>
                     <div class="logout-btn">
 
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                            ログアウト
-                        </a>
-                        <form id="logout-btn" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                ログアウト
+                            </a>
+    
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
                     </div>
-                    @endif
-                    @endif
+
+                    @endguest
+
                     @yield('left')
                 </div>
             </div>

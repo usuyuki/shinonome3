@@ -99,8 +99,8 @@
 <p>　</p>
 
 <div class="main-explain">
-    <h3><span class="orange-line">制作にあたって参考にさせていただいた記事</span></h3>
-    <p class="main-explain-sub">数多くの記事を参考に制作しましたが、特に参考にした記事について恐縮ながら挙げさせていただきます。</p>
+    <h3><span class="orange-line">制作にあたって参考にさせていただいたサイト</span></h3>
+    <p class="main-explain-sub">数多くのサイトを参考に制作しましたが、特に参考にしたサイトについて恐縮ながら挙げさせていただきます。</p>
     
     
     <div class="reference-title">

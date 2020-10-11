@@ -83,10 +83,9 @@ class LoginController extends Controller
                 'twitter_token' => $providerUser->token
             ], [
                 'name' => $providerUser->name,
-                'twitter_id' => $providerUser->id,
                 'twitter_name' => $providerUser->nickname, // @abc
                 'profile_photo_path' => $providerUser->avatar_original
-                // 'profile_photo_path'=>$providerUser->profile_image_url_https,
+
 
             ]));
 
