@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Greet extends Model
 {
-    use HasFactory;
+    // use HasFactory;
 
     //これは消してもDB上には残る仕組み。
     use SoftDeletes;
