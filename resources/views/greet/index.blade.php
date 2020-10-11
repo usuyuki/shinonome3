@@ -1,5 +1,6 @@
-@extends('layouts.shinonome_in_app')
-@section('title','ご利用にあたって/しののめ')
+{{-- @extends('layouts.shinonome_in_app')
+@section('title','ご利用にあたって/しののめ') --}}
+@extends('layouts.app')
 @section('content')
 
  <!-- 投稿コーナー -->
@@ -51,14 +52,14 @@
                 <div class="col-md-8 mb-3">
                     <div class="card">
                         <div class="card-haeder p-3 w-100 d-flex">
-                            @component('components.explain')
+                            {{-- @component('components.explain')
         @slot('title')
         {{$timeline->greet}}
         @endslot
         @slot('explain')
         これはメッセージの表示です。
         @endslot
-    @endcomponent
+    @endcomponent --}}
                             <img src="{{$timeline->user->profile_photo_path }}" class="rounded-circle" width="50" height="50">
                             <div class="ml-2 d-flex flex-column">
 
