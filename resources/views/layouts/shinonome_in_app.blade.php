@@ -236,10 +236,11 @@
                     <div class="logout-btn">
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                            <a href="#">準備中</a>
+                            {{-- <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                 ログアウト
-                            </a>
+                            </a> --}}
     
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
