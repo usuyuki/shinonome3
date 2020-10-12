@@ -2,11 +2,33 @@
 @section('title','ユーザー/しののめ')
 
 @section('content')
+<style>
+
+.follow-btn button{
+
+width: 200px;
+padding: 0.3em;
+
+
+color: #1b1b1b;
+background: #fff;
+border: 1px solid #1b1b1b;
+}
+
+.follow-btn:hover  button{
+background: #FF8000;
+border: 1px solid #FF8000;
+color: #fff;
+cursor: pointer;
+text-decoration: none;
+}
+</style>
+
 <div class="main-title">
     <h1><span class="orange-line">{{ $user->name }}さんのページです</span></h1>
 </div>
 <div class="container">
-<div class="container">
+
     <div class="row justify-content-center">
         <div class="col-md-8 mb-3">
             <div class="card">
@@ -23,20 +45,24 @@
                         <div class="d-flex">
                             <div>
                                 @if ($user->id === Auth::user()->id)
-                                <a href='/users/ {{$user->id}}/edit' class="btn btn-primary">プロフィールを編集する</a>
+                                <a href='/setting' class="btn btn-primary">プロフィールを編集する</a>
+                                {{-- <a href='/users/ {{$user->id}}/edit' class="btn btn-primary">プロフィールを編集する</a> --}}
                                 @else
                                 @if ($is_following)
                                 <form action="{{ route('unfollow', ['user' => $user->id])  }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button type="submit" class="btn btn-danger">フォロー解除</button>
+                                    <div class="follow-btn">
+                                        <button type="submit" >フォロー解除</button>
+                                    </div>
                                 </form>
                                 @else
                                 <form action="{{ route('follow', ['user' => $user->id])  }}" method="POST">
                                     {{ csrf_field() }}
-
-                                    <button type="submit" class="btn btn-primary">フォローする</button>
+                                    <div class="follow-btn">
+                                        <button type="submit" >フォローする</button>
+                                    </div>
                                 </form>
                                 @endif
 

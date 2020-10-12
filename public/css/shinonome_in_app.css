@@ -31,16 +31,6 @@
   position: sticky;
 }
 
-.profile_photo {
-  border-radius: 50%;
-  border-width: 2px;
-  border-style: solid;
-  border-color: black;
-  width: 56px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .logo {
   margin: 30px auto 0;
   padding-left: 30px;
@@ -294,6 +284,18 @@
 
 .main-explain {
   text-align: center;
+}
+
+/* imgタグの中にクラスする */
+
+.user-icon-img {
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  width: 56px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container {

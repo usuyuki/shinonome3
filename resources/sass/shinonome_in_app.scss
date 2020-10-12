@@ -8,6 +8,16 @@
 
 @import "responsive";
 
+/* imgタグの中にクラスする */
+.user-icon-img {
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    width: 56px;
+    object-fit: cover;
+}
+
 .container {
     display: -webkit-flex;
     display: flex;

@@ -23,7 +23,7 @@ class UsersController extends Controller
     {
         $all_users = $user->getAllUsers(auth()->user()->id);
 
-        return view('users.index', [
+        return view('users.user_all', [
             'all_users'  => $all_users
         ]);
     }
