@@ -113,9 +113,9 @@
                 <div class="greet-name">
                     <p>{{$name}}</p>
                 </div>
-                <div class="greet-delate">
+                {{-- <div class="greet-delate">
                     {{$delate}}
-                </div>
+                </div> --}}
                 
                 <div class="greet-timestamp">
                     <p>{{$timestamp}}</p>
@@ -136,9 +136,9 @@
             </div>
                 
                 
-            <div class="greet-like">
+            {{-- <div class="greet-like">
                     {{$like_btn}}
-            </div>
+            </div> --}}
         </div>
     
     </div>
