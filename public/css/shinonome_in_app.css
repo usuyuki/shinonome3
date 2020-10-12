@@ -1,55 +1,5 @@
 @charset "UTF-8";
 
-.container {
-  display: flex;
-  -webkit-justify-content: center;
-  /* justify-content: space-around; */
-}
-
-.center {
-  text-align: center;
-}
-
-li {
-  list-style: none;
-}
-
-svg {
-  fill: black;
-  /* fill: currentColor; */
-}
-
-/* メインコンテンツ */
-
-.main {
-  /* position: absolute; */
-  flex-basis: 838px;
-  height: auto;
-  /* text-align: center; */
-  order: 2;
-  /* flexboxの順番*/
-  /* left: 302px;
-  top: 0px;             */
-  /* display: block; */
-  /* width: 830px; */
-  /* margin-right: 20px; */
-  /* background-color: pink; */
-  /* align-self: stretch; */
-}
-
-.main-title {
-  text-align: center;
-  margin-bottom: 3px;
-}
-
-.orange-line {
-  border-bottom: solid 3px #ff8000;
-}
-
-.main-explain {
-  text-align: center;
-}
-
 /* 左サイドバー */
 
 .left_sidebar {
@@ -175,7 +125,8 @@ svg {
 }
 
 .login-btn:hover a {
-  background: #1b1b1b;
+  background: #ff8000;
+  border: 1px solid #ff8000;
   color: #fff;
   cursor: pointer;
   text-decoration: none;
@@ -194,7 +145,8 @@ svg {
 }
 
 .register-btn:hover a {
-  background: #1b1b1b;
+  background: #ff8000;
+  border: 1px solid #ff8000;
   color: #fff;
   cursor: pointer;
   text-decoration: none;
@@ -213,7 +165,8 @@ svg {
 }
 
 .logout-btn:hover a {
-  background: #1b1b1b;
+  background: #ff8000;
+  border: 1px solid #ff8000;
   color: #fff;
   cursor: pointer;
   text-decoration: none;
@@ -311,6 +264,58 @@ svg {
   margin: 0 auto;
   width: 70%;
 }
+
+/* メインコンテンツ */
+
+.main {
+  /* position: absolute; */
+  flex-basis: 838px;
+  height: auto;
+  /* text-align: center; */
+  order: 2;
+  /* flexboxの順番*/
+  /* left: 302px;
+  top: 0px;             */
+  /* display: block; */
+  /* width: 830px; */
+  /* margin-right: 20px; */
+  /* background-color: pink; */
+  /* align-self: stretch; */
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.orange-line {
+  border-bottom: solid 3px #ff8000;
+}
+
+.main-explain {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  -webkit-justify-content: center;
+  /* justify-content: space-around; */
+}
+
+.center {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+svg {
+  fill: black;
+  /* fill: currentColor; */
+}
+
+/* 他 */
 
 .kome {
   text-align: center;

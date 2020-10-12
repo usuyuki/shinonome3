@@ -1,0 +1,158 @@
+@import "color";
+@import "responsive";
+/* 左サイドバー */
+.left_sidebar {
+    border-right: 1px ridge;
+    /* position: absolute; */
+    flex-basis: 300px;
+    height: 500px;
+    /* left: 0px;
+    top: 0px; */
+
+    /* box-sizing: border-box; */
+    text-align: center;
+    order: 1;
+    /* flexboxの順番*/
+    position: sticky;
+    /* //固定*/
+    top: 0;
+    /*  上部 0px の位置に固定*/
+    /* position: sticky; */
+    /* margin:0 0 0 auto; */
+    /* width: 300px;
+background-color: green; */
+    /* align-self: stretch; */
+}
+
+.left_sidebar__item {
+    /* margin-bottom: 20px; */
+    position: sticky;
+}
+
+.profile_photo {
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    width: 56px;
+    object-fit: cover;
+}
+
+.logo {
+    margin: 30px auto 0;
+    padding-left: 30px;
+}
+
+.left-menu {
+    margin: 40px auto;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    justify-content: center;
+}
+
+.left-menu-content {
+    width: 300px;
+    padding: 20px 0;
+    margin: 0 0;
+    /* border: 1px solid green; */
+}
+.left-menu-content:hover svg {
+    fill: #ff8000;
+}
+.left-menu-content a {
+    text-decoration: none;
+    text-align: center;
+}
+.menu-icon {
+    float: left;
+
+    margin-left: 30px;
+    display: block;
+    /* border: 1px solid red; */
+}
+.menu-icon svg {
+    margin: 20px 20px;
+}
+.menu-letter {
+    height: 48px;
+    display: block;
+    text-align: center;
+    /* border: 1px solid blue; */
+}
+.menu-letter p {
+    font-size: 20px;
+    color: black;
+}
+.menu-letter:hover p {
+    font-size: 20px;
+    color: #ff8000;
+}
+
+.dropdown-item a {
+    text-decoration: none;
+}
+
+.user {
+    /* display: block; */
+    margin: 40px auto;
+
+    justify-content: center;
+}
+.user-icon {
+    float: left;
+    /* border: 1px solid blue; */
+    margin-left: 90px;
+}
+.login-btn a {
+    display: block;
+    text-decoration: none;
+    width: 200px;
+    padding: 0.3em;
+    margin-left: 100px;
+    text-align: center;
+    color: #1b1b1b;
+    background: #fff;
+    border: 1px solid #1b1b1b;
+}
+.login-btn:hover a {
+    background: #ff8000;
+    border: 1px solid #ff8000;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+.register-btn a {
+    display: block;
+    text-decoration: none;
+    width: 200px;
+    padding: 0.3em;
+    margin-left: 100px;
+    text-align: center;
+    color: #1b1b1b;
+    background: #fff;
+    border: 1px solid #1b1b1b;
+}
+.register-btn:hover a {
+    background: #ff8000;
+    border: 1px solid #ff8000;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+.logout-btn a {
+    display: block;
+    text-decoration: none;
+    width: 90px;
+    padding: 0.3em;
+    margin-left: 200px;
+    text-align: center;
+    color: #1b1b1b;
+    background: #fff;
+    border: 1px solid #1b1b1b;
+}
+.logout-btn:hover a {
+    background: #ff8000;
+    border: 1px solid #ff8000;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}

@@ -1,0 +1,29 @@
+@import "color";
+@import "responsive";
+/* メインコンテンツ */
+.main {
+    /* position: absolute; */
+    flex-basis: 838px;
+    height: auto;
+    /* text-align: center; */
+    order: 2;
+    /* flexboxの順番*/
+
+    /* left: 302px;
+top: 0px;             */
+    /* display: block; */
+    /* width: 830px; */
+    /* margin-right: 20px; */
+    /* background-color: pink; */
+    /* align-self: stretch; */
+}
+.main-title {
+    text-align: center;
+    margin-bottom: 3px;
+}
+.orange-line {
+    border-bottom: solid 3px #ff8000;
+}
+.main-explain {
+    text-align: center;
+}
