@@ -47,7 +47,7 @@ class IndexController extends Controller
         $sunrise_utunomiya = date_sunrise(time(), SUNFUNCS_RET_STRING, 36.555261, 139.882656, 90.5, 9);
         //札幌市役所
         $sunrise_sapporo = date_sunrise(time(), SUNFUNCS_RET_STRING, 43.062052, 141.354340, 90.5, 9);
-        \Log::debug($sunrise_tokyo);
+
         $data = [
             'sunrise_naha' => $sunrise_naha,
             'sunrise_tokyo' => $sunrise_tokyo,

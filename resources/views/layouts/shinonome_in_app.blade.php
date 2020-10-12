@@ -14,9 +14,7 @@
 
         gtag('config', 'UA-179296536-1');
     </script>
-    <!-- Global site tag (gtag.js) - Google Analyticsここまで -->
 
-    
     <meta charset="utf-8">
     
     <title>@yield('title')</title>

@@ -16,13 +16,10 @@ class GreetController extends Controller
 
     public function allShowGreetPage()
     {
-        $timelines = Greet::latest()->get();
-        $user = auth()->user();
+        $greets = Greet::latest()->get();
+        // $user = User::where('id', '=', $greets->user_id)->first();
 
-        return view('main.left.greet', [
-            'user'      => $user,
-            'timelines' => $timelines
-        ]);
+        return view('main.left.greet', ['greets' => $greets,]);
     }
 
     public function postGreet(Request $request)
