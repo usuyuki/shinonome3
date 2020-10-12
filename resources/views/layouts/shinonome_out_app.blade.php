@@ -84,7 +84,7 @@
             <div class="greet">
                 <ul>
                     <li>
-                        <a href="{{ url('/greet') }}">あいさつページへ</a>
+                        <a href='/greet'>あいさつページへ</a>
                     </li>
                     <li>
                         <!-- ログアウト処理 -->

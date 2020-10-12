@@ -1,8 +1,9 @@
-{{-- @extends('layouts.app') --}}
-@extends('layouts.shinonome_in_app')
-@section('title','ユーザー編集/しののめ')
+@extends('layouts.app')
 
 @section('content')
+<div class="main-title">
+    <h1><span class="orange-line">ユーザー編集</span></h1>
+</div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -10,7 +11,7 @@
                 <div class="card-header">Update</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ url('users/' .$user->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="/users/ {{$user->id }}" >
                         @csrf
                         @method('PUT')
 

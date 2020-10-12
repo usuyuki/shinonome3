@@ -14,9 +14,7 @@
 
         gtag('config', 'UA-179296536-1');
     </script>
-    <!-- Global site tag (gtag.js) - Google Analyticsここまで -->
 
-    
     <meta charset="utf-8">
     
     <title>@yield('title')</title>
@@ -106,7 +104,7 @@
             <div class="left_sidebar__item">
                 <!-- 中身 -->
                 <div class="logo">
-                    <a href="{{ url('/greet') }}">
+                    <a href='/greet'>
                         <img src="/img/logos/しののめロゴ20200924.png" width="150px" height="32px" class="logo" alt="しののめのロゴです">
                     </a>
                 </div>
@@ -223,7 +221,7 @@
                     @else
                     <div class="user-icon">
                         {{-- <img src="{{ asset($user->profile_photo_path) }}" class="rounded-circle" width="50" height="50"> --}}
-                        <a href="{{ url('users/' . Auth::user()->id) }}" class="text-secondary">
+                        <a href="/users/{{ Auth::user()->id }}" class="text-secondary">
                         <img class="profile_photo" src="{{ Auth::user()->profile_photo_path }}" />
                         </a>
                     </div>
@@ -236,10 +234,11 @@
                     <div class="logout-btn">
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                            <a href="#">準備中</a>
+                            {{-- <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                 ログアウト
-                            </a>
+                            </a> --}}
     
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

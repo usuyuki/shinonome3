@@ -79,11 +79,11 @@
     <p>　</p>
     <!-- 投稿コーナー -->
     <div class="submit">
-        <form method="POST" action="/greet">
+        <form method="POST" action="/greet/sub">
             @csrf
 
             <div class="submit-textarea">
-                <textarea class="form-control @error('greet') is-invalid @enderror" name="greet" required autocomplete="greet" rows="4">{{ old('greet') }}</textarea>
+                <textarea class="form-control @error('greet/sub') is-invalid @enderror" name="greet" required autocomplete="greet" rows="4">{{ old('greet') }}</textarea>
 
             </div>
             <div class="submit-error">
@@ -125,7 +125,7 @@
                                     @endslot
 
                                     @slot('name')
-                                        <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary"><p class="mb-0">{{ $timeline->user->name }}</p></a>
+                                        <a href="/users/{{$timeline->user->id}}" class="text-secondary"><p class="mb-0">{{ $timeline->user->name }}</p></a>
                                     @endslot
 
                                     @slot('timestamp')
@@ -162,7 +162,7 @@
                                         <!-- いいねコーナー -->
                                         <div class="d-flex align-items-center">
                                             @if (!in_array($user->id, array_column($timeline->favorites->toArray(), 'user_id'), TRUE))
-                                                <form method="POST" action="{{ url('favorites/') }}" class="mb-0">
+                                                <form method="POST" action='/favorites/' class="mb-0">
                                                     @csrf
 
                                                     <input type="hidden" name="greet_id" value="{{ $timeline->id }}">
@@ -174,7 +174,7 @@
                                                 </form>
 
                                             @else
-                                                <form method="POST" action="{{ url('favorites/' .array_column($timeline->favorites->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
+                                                <form method="POST" action="/favorites/{{ array_column($timeline->favorites->toArray(), 'id', 'user_id')[$user->id] }}" class="mb-0">
                                                     @csrf
                                                     @method('DELETE')
                                                     <div class="btn-off">

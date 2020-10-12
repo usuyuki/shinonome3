@@ -31,17 +31,18 @@ Route::get('/home', [IndexController::class, 'home'])->name('home');
 
 
 
-Route::post('/greet/delate/{greet_id?}', [GreetController::class, 'delateGreet'])->name('greet_delate');
 //ログインしてない場合→ログインに遷移する！！！
 Route::group(['middleware' => 'auth'], function () {
 
     //あいさつ
     Route::get('/greet/all', [GreetController::class, 'allShowGreetPage'])->name('greet_all');
     Route::get('/greet', [GreetController::class, 'showGreetPage'])->name('greet');
+    Route::post('/greet/sub', [GreetController::class, 'showGreetPage'])->name('greet');
 
-    Route::post('/greet', [GreetController::class, 'postGreet'])->name('greet');
+    Route::post('/greet/delate/{greet_id?}', [GreetController::class, 'delateGreet'])->name('greet_delate');
 
-
+    //あいさつページいいね機能
+    Route::resource('favorites', FavoritesController::class, ['only' => ['store', 'destroy']]);
     //CRUDルーティングを一度に行うRoute::resource
     //いらないメソッドまでリンク作られてしまうのでonly使うことでエラーを防止する
     Route::resource('users', UsersController::class, ['only' => ['index', 'show', 'edit', 'update']]);
@@ -49,6 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
     // フォロー/フォロー解除を追加
     Route::post('users/{user}/follow', [UsersController::class, 'follow'])->name('follow');
     Route::delete('users/{user}/unfollow', [UsersController::class, 'unfollow'])->name('unfollow');
+
 
     //original
     //コチャ '/directmessage'
@@ -58,10 +60,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/setting', [SettingController::class, 'postSetting'])->name('setting_post');
     //ヒストリーと起床時間'/record'
     Route::get('/record', [RecordController::class, 'record'])->name('record');
-
-
-    //あいさつページいいね機能
-    Route::resource('favorites', FavoritesController::class, ['only' => ['store', 'destroy']]);
 });
 
 //プライバイシーポリシー '/privacypolicy'

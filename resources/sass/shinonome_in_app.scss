@@ -73,7 +73,7 @@ background-color: green; */
 
 .profile_photo {
     border-radius: 50%;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
     border-color: black;
     width: 56px;
@@ -156,8 +156,7 @@ background-color: green; */
     border: 1px solid #1b1b1b;
 }
 .login-btn:hover a {
-    background: #ff8000;
-    border: 1px solid #ff8000;
+    background: #1b1b1b;
     color: #fff;
     cursor: pointer;
     text-decoration: none;
@@ -174,8 +173,7 @@ background-color: green; */
     border: 1px solid #1b1b1b;
 }
 .register-btn:hover a {
-    background: #ff8000;
-    border: 1px solid #ff8000;
+    background: #1b1b1b;
     color: #fff;
     cursor: pointer;
     text-decoration: none;
@@ -192,8 +190,7 @@ background-color: green; */
     border: 1px solid #1b1b1b;
 }
 .logout-btn:hover a {
-    background: #ff8000;
-    border: 1px solid #ff8000;
+    background: #1b1b1b;
     color: #fff;
     cursor: pointer;
     text-decoration: none;

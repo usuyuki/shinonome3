@@ -10,6 +10,10 @@
 <div class="main-title">
     <h1><span class="orange-line">ご利用にあたって</span></h1>
 </div>
+@include('components.explain',
+['title'=>'複数タブでのご利用',
+'explain'=>'複数のタブで同時に開いて「あいさつ」などを行うとCSRF(クロスサイトリクエストフォージェリ)対策関係のシステムの都合で409エラーが生じてあいさつなどができないことがあります。複数タブでのご利用はご遠慮ください。
+'])
 
 @include('components.explain',
 ['title'=>'JavaScript',

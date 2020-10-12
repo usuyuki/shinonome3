@@ -150,14 +150,6 @@
         cursor: pointer;
         text-decoration: none;
     }
-    .user-list{
-      
-    }
-    .user-list a{
-        text-aligin:center;
-        text-decoration: none;
-        color:blue;
-    }
 </style>
 
 <div class="main-title">
@@ -202,10 +194,13 @@
             <p>あなたの「しののめ」登録日:{{$user->created_at}}</p>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="user-list">
 
-        <a href="{{ url('users') }}">他のユーザーを探す </a>
+        <a href='/users'>他のユーザーを探す </a>
     </div>
 
+=======
+>>>>>>> parent of 9d5268e... Merge pull request #5 from Usuyuki/change_greet_layouts
 </div>
 @endsection

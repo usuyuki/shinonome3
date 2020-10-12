@@ -1,8 +1,9 @@
-{{-- @extends('layouts.app') --}}
-@extends('layouts.shinonome_in_app')
-@section('title','ユーザー一覧/しののめ')
+@extends('layouts.app')
 
 @section('content')
+<div class="main-title">
+    <h1><span class="orange-line">ユーザー一覧(自身を除く)</span></h1>
+</div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,7 +13,7 @@
                     <img src="{{ $user->profile_photo_path}}" class="rounded-circle" width="50" height="50">
                     <div class="ml-2 d-flex flex-column">
                         <p class="mb-0">{{ $user->name }}</p>
-                        <a href="{{ url('users/' .$user->id) }}" class="text-secondary">{{ $user->explain }}</a>
+                        <a href="/users/{{$user->id}}" class="text-secondary">{{ $user->explain }}</a>
                     </div>
                     <!-- フォローされているか -->
                     @if (auth()->user()->isFollowed($user->id))
