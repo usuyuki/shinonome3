@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.shinonome_in_app')
+@section('title','あいさつ/しののめ')
+
 
 @section('content')
 <div class="main-title">
