@@ -24,7 +24,6 @@ class GreetController extends Controller
 
     public function postGreet(Request $request)
     {
-        \Log::debug($request->greet);
         $request->validate([
             'greet' => 'required|max:140',
         ]);
@@ -48,10 +47,10 @@ class GreetController extends Controller
         $following_ids = $follow_ids->pluck('followed_id')->toArray();
 
         $timelines = $greet->getTimelines($user->id, $following_ids);
-        \Log::debug($timelines);
+
         return view('main.left.greet', [
             'user'      => $user,
-            'timelines' => $timelines,
+            'timelines' => $timelines
         ]);
     }
 

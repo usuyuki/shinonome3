@@ -194,10 +194,13 @@
             <p>あなたの「しののめ」登録日:{{$user->created_at}}</p>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="user-list">
 
         <a href='/users'>他のユーザーを探す </a>
     </div>
 
+=======
+>>>>>>> parent of 9d5268e... Merge pull request #5 from Usuyuki/change_greet_layouts
 </div>
 @endsection
