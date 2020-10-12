@@ -17,7 +17,7 @@
 
 
 {{-- @include('components.release_message',['ver'=>'0','date'=>'2020.','exp1'=>'・','exp2'=>'・','exp3'=>'・','exp4'=>'・',]) --}}
-@include('components.release_message',['ver'=>'0.5','date'=>'2020.10.11','exp1'=>'・ログアウトできないバクの修正','exp2'=>'・参考サイトの一部記載を追加しました','exp3'=>'・','exp4'=>'・',])
+@include('components.release_message',['ver'=>'0.5','date'=>'2020.10.11','exp1'=>'・ログアウトできないバクの修正','exp2'=>'・参考サイトの一部記載を追加しました','exp3'=>'・現在、いいね機能、削除機能が利用できません','exp4'=>'',])
 
 
 @include('components.release_message',['ver'=>'0.4','date'=>'2020.10.10','exp1'=>'・あいさつページの大幅機能変更(フォローしたユーザーのみ表示)','exp2'=>'・フォロー機能追加','exp3'=>'・個人ページ追加','exp4'=>'・あいさつにいいねできる機能追加',])
