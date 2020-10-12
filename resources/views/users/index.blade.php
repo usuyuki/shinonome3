@@ -1,5 +1,6 @@
-@extends('layouts.app')
-
+{{-- @extends('layouts.app') --}}
+@extends('layouts.shinonome_in_app')
+@section('title','ユーザー一覧/しののめ')
 @section('content')
 <div class="main-title">
     <h1><span class="orange-line">ユーザー一覧(自身を除く)</span></h1>

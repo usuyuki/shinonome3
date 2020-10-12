@@ -79,11 +79,11 @@
     <p>　</p>
     <!-- 投稿コーナー -->
     <div class="submit">
-        <form method="POST" action="/greet/sub">
+        <form method="POST" action="/greet">
             @csrf
 
             <div class="submit-textarea">
-                <textarea class="form-control @error('greet/sub') is-invalid @enderror" name="greet" required autocomplete="greet" rows="4">{{ old('greet') }}</textarea>
+                <textarea class="form-control @error('greet') is-invalid @enderror" name="greet" required autocomplete="greet" rows="4">{{ old('greet') }}</textarea>
 
             </div>
             <div class="submit-error">

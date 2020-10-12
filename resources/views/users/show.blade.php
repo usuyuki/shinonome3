@@ -1,6 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.shinonome_in_app')
+@section('title','ユーザー/しののめ')
 
 @section('content')
+<div class="main-title">
+    <h1><span class="orange-line">{{ $user->name }}さんのページです</span></h1>
+</div>
+<div class="container">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mb-3">
