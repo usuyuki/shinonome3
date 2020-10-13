@@ -70,7 +70,7 @@
 
     <!-- CSS読み込み -->
     <link href="/css/shinonome_in_app.css" rel="stylesheet">
-    
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> --}}
     <!-- Bootstrap読み込み -->
 {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <!-- JS読み込み -->
@@ -222,7 +222,7 @@
                     <div class="user-icon">
                         {{-- <img src="{{ asset($user->profile_photo_path) }}" class="rounded-circle" width="50" height="50"> --}}
                         <a href="/users/{{ Auth::user()->id }}" class="text-secondary">
-                        <img class="profile_photo" src="{{ Auth::user()->profile_photo_path }}" />
+                        <img class="user-icon-img" src="{{ Auth::user()->profile_photo_path }}" />
                         </a>
                     </div>
 
@@ -299,6 +299,14 @@
                                 <a href="/release">リリースノート</a>
                             </li>
                         </div>
+
+                        <div class="right-menu-content">
+                            <li>
+                                <a href="/users">ユーザー一覧</a>
+                            </li>
+                        </div>
+
+
                         <div class="right-menu-content">
                             <li>
                                 <p>copyright 2020 usuyuki.</p>

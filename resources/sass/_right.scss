@@ -1,0 +1,81 @@
+@import "color";
+@import "responsive";
+/* 右サイドバー */
+.right_sidebar {
+    flex-basis: 300px;
+    height: 500px;
+    border-left: 1px ridge;
+
+    text-align: center;
+    order: 3;
+    /* flexboxの順番*/
+    position: sticky;
+    /* //固定*/
+    top: 0;
+}
+
+.right_sidebar__item {
+    /* margin-bottom: 20px; */
+    position: sticky;
+}
+
+/* 時計関係 */
+.right-watch {
+    margin-top: 100px;
+}
+.time_name {
+    font-size: 40px;
+}
+.timezone {
+    font-size: 30px;
+}
+.time {
+    font-size: 38px;
+}
+
+.second {
+    font-size: 28px;
+}
+/* .millisec {
+    font-size: 14px;
+} */
+.countdown {
+    font-size: 8px;
+    color: #87c9b6;
+}
+/* 時計関係ここまで */
+
+.right-menu {
+    font-size: 15px;
+    xpadding-top: 30%;
+    line-height: 70px;
+
+    text-align: center;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    flex-direction: column;
+}
+.right-menu-content {
+    /* width: 100%; */
+    display: block;
+}
+.right-menu-content a {
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
+}
+.right-menu-content p {
+    font-size: 12px;
+    color: black;
+    opacity: 0.3;
+}
+.right-menu-content:hover a {
+    text-decoration: none;
+    color: black;
+    opacity: 1;
+}
+.copyright {
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    width: 70%;
+}

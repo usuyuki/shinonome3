@@ -12,21 +12,20 @@
     }
 
 
-    .set-user-icon img {
+    .set-user-icon-img img {
         border-radius: 50%;
         border-width: 2px;
         border-style: solid;
         border-color: black;
-        object-fit: cover;
+        /* アスペクト比を維持したまま、要素のコンテンツボックス全体を埋めるように拡大縮小 */
+        object-fit: cover;  
+
         width: 60%;
         height: auto;
 
-
-        /* float: left; */
-        /* display: block; */
     }
 
-    .set-user-icon-image {
+    .user-icon-img {
         margin: 0 auto;
         text-align: center;
 
@@ -161,7 +160,7 @@
         @csrf
         <h4>変更後は必ず「保存」ボタンを押してください</h4>
         <div class="set-user-icon">
-            <div class="set-user-icon-image">
+            <div class="set-user-icon-img">
                 <img src="{{$user->profile_photo_path}}" alt="あなたのアイコンです">
             </div>
             <div class="set-user-icon-btn">
@@ -194,13 +193,10 @@
             <p>あなたの「しののめ」登録日:{{$user->created_at}}</p>
         </div>
     </div>
-<<<<<<< HEAD
     <div class="user-list">
 
         <a href='/users'>他のユーザーを探す </a>
     </div>
 
-=======
->>>>>>> parent of 9d5268e... Merge pull request #5 from Usuyuki/change_greet_layouts
 </div>
 @endsection

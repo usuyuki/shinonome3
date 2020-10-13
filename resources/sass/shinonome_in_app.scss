@@ -1,3 +1,23 @@
+@import "left";
+
+@import "right";
+
+@import "main";
+
+@import "color";
+
+@import "responsive";
+
+/* imgタグの中にクラスする */
+.user-icon-img {
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    width: 56px;
+    object-fit: cover;
+}
+
 .container {
     display: -webkit-flex;
     display: flex;
@@ -14,266 +34,8 @@ svg {
     fill: black;
     /* fill: currentColor; */
 }
-/* メインコンテンツ */
-.main {
-    /* position: absolute; */
-    flex-basis: 838px;
-    height: auto;
-    /* text-align: center; */
-    order: 2;
-    /* flexboxの順番*/
 
-    /* left: 302px;
-top: 0px;             */
-    /* display: block; */
-    /* width: 830px; */
-    /* margin-right: 20px; */
-    /* background-color: pink; */
-    /* align-self: stretch; */
-}
-.main-title {
-    text-align: center;
-    margin-bottom: 3px;
-}
-.orange-line {
-    border-bottom: solid 3px #ff8000;
-}
-.main-explain {
-    text-align: center;
-}
-
-/* 左サイドバー */
-.left_sidebar {
-    border-right: 1px ridge;
-    /* position: absolute; */
-    flex-basis: 300px;
-    height: 500px;
-    /* left: 0px;
-    top: 0px; */
-
-    /* box-sizing: border-box; */
-    text-align: center;
-    order: 1;
-    /* flexboxの順番*/
-    position: sticky;
-    /* //固定*/
-    top: 0;
-    /*  上部 0px の位置に固定*/
-    /* position: sticky; */
-    /* margin:0 0 0 auto; */
-    /* width: 300px;
-background-color: green; */
-    /* align-self: stretch; */
-}
-
-.left_sidebar__item {
-    /* margin-bottom: 20px; */
-    position: sticky;
-}
-
-.profile_photo {
-    border-radius: 50%;
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
-    width: 56px;
-    object-fit: cover;
-}
-
-.logo {
-    margin: 30px auto 0;
-    padding-left: 30px;
-}
-
-.left-menu {
-    margin: 40px auto;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    justify-content: center;
-}
-
-.left-menu-content {
-    width: 300px;
-    padding: 20px 0;
-    margin: 0 0;
-    /* border: 1px solid green; */
-}
-.left-menu-content:hover svg {
-    fill: #ff8000;
-}
-.left-menu-content a {
-    text-decoration: none;
-    text-align: center;
-}
-.menu-icon {
-    float: left;
-
-    margin-left: 30px;
-    display: block;
-    /* border: 1px solid red; */
-}
-.menu-icon svg {
-    margin: 20px 20px;
-}
-.menu-letter {
-    height: 48px;
-    display: block;
-    text-align: center;
-    /* border: 1px solid blue; */
-}
-.menu-letter p {
-    font-size: 20px;
-    color: black;
-}
-.menu-letter:hover p {
-    font-size: 20px;
-    color: #ff8000;
-}
-
-.dropdown-item a {
-    text-decoration: none;
-}
-
-.user {
-    /* display: block; */
-    margin: 40px auto;
-
-    justify-content: center;
-}
-.user-icon {
-    float: left;
-    /* border: 1px solid blue; */
-    margin-left: 90px;
-}
-.login-btn a {
-    display: block;
-    text-decoration: none;
-    width: 200px;
-    padding: 0.3em;
-    margin-left: 100px;
-    text-align: center;
-    color: #1b1b1b;
-    background: #fff;
-    border: 1px solid #1b1b1b;
-}
-.login-btn:hover a {
-    background: #1b1b1b;
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none;
-}
-.register-btn a {
-    display: block;
-    text-decoration: none;
-    width: 200px;
-    padding: 0.3em;
-    margin-left: 100px;
-    text-align: center;
-    color: #1b1b1b;
-    background: #fff;
-    border: 1px solid #1b1b1b;
-}
-.register-btn:hover a {
-    background: #1b1b1b;
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none;
-}
-.logout-btn a {
-    display: block;
-    text-decoration: none;
-    width: 90px;
-    padding: 0.3em;
-    margin-left: 200px;
-    text-align: center;
-    color: #1b1b1b;
-    background: #fff;
-    border: 1px solid #1b1b1b;
-}
-.logout-btn:hover a {
-    background: #1b1b1b;
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none;
-}
-/* 右サイドバー */
-.right_sidebar {
-    flex-basis: 300px;
-    height: 500px;
-    border-left: 1px ridge;
-
-    text-align: center;
-    order: 3;
-    /* flexboxの順番*/
-    position: sticky;
-    /* //固定*/
-    top: 0;
-}
-
-.right_sidebar__item {
-    /* margin-bottom: 20px; */
-    position: sticky;
-}
-
-/* 時計関係 */
-.right-watch {
-    margin-top: 100px;
-}
-.time_name {
-    font-size: 40px;
-}
-.timezone {
-    font-size: 30px;
-}
-.time {
-    font-size: 38px;
-}
-
-.second {
-    font-size: 28px;
-}
-/* .millisec {
-    font-size: 14px;
-} */
-.countdown {
-    font-size: 8px;
-    color: #87c9b6;
-}
-/* 時計関係ここまで */
-
-.right-menu {
-    font-size: 15px;
-    xpadding-top: 30%;
-    line-height: 70px;
-
-    text-align: center;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    flex-direction: column;
-}
-.right-menu-content {
-    /* width: 100%; */
-    display: block;
-}
-.right-menu-content a {
-    text-decoration: none;
-    color: black;
-    opacity: 0.5;
-}
-.right-menu-content p {
-    font-size: 12px;
-    color: black;
-    opacity: 0.3;
-}
-.right-menu-content:hover a {
-    text-decoration: none;
-    color: black;
-    opacity: 1;
-}
-.copyright {
-    text-align: center;
-    display: inline-block;
-    margin: 0 auto;
-    width: 70%;
-}
+/* 他 */
 .kome {
     text-align: center;
     font-size: 14px;
