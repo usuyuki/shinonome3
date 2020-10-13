@@ -31,18 +31,41 @@ text-decoration: none;
     width:80%;
     margin:20px auto;
     border:1px solid black;
+    border-radius: 1%;
     padding:3%;
 }
 .user-detail a{
     text-align: left;
     margin:10px 10px;
+    text-decoration: none;
     display: inline-block;
+    color:#ff8000;
 }
 .user-detail p{
     text-align: left;
 }
 .user-detail img{
     float:left;
+}
+.follow-true p{
+    opacity:0.5;
+    font-size:13px;
+    margin:2px 0;
+
+    
+}
+.follow-unfollow{
+
+    margin:10px 20px 20px 0px;
+}
+.user-explain p{
+    margin-top:30px;
+    margin-bottom:10px;
+}
+.pagenation{
+    text-decoration: none;
+    text-align: none;
+    font-size:20px;
 }
 </style>
 <div class="main-title">
@@ -54,19 +77,18 @@ text-decoration: none;
             <div class="user-waku">
 
                 <div class="user-detail">
-                    <img src="{{ $user->profile_photo_path}}" class="user-icon-img"  width="50" height="50">
+                    <a href="/users/{{$user->id}}" class="text-secondary">
+                    <img src="{{ $user->profile_photo_path}}" class="user-icon-img"  width="50" height="50"></a>
                         <a href="/users/{{$user->id}}" class="text-secondary">{{ $user->name }}</a>
+                    <div class="user-explain">
+
                         <p>{{ $user->explain }}</p>
+                        
                     </div>
-                    <!-- フォローされているか -->
-                    @if (auth()->user()->isFollowed($user->id))
-                    <div class="follow-true">
-                        <span class="px-1 bg-secondary text-light">フォローされています</span>
-                    </div>
-                    @endif
+                    
 
 
-                    <div class="d-flex justify-content-end flex-grow-1">
+                    <div class="follow-unfollow">
                         <!-- フォローしているか -->
                         @if (auth()->user()->isFollowing($user->id))
                         <form action="{{ route('unfollow', ['user' => $user->id])  }}" method="POST">
@@ -87,12 +109,20 @@ text-decoration: none;
                         </form>
                         @endif
                     </div>
-           
+
+                    <!-- フォローされているか -->
+                    @if (auth()->user()->isFollowed($user->id))
+                    <div class="follow-true">
+                        <p>フォローされています！やったー！</p>
+                    </div>
+                    @endif
+                </div>
             </div>
             @endforeach
 
-    <div class="my-4 d-flex justify-content-center">
-        {{ $all_users->links() }}
+    <!-- ページネーション用のやつ -->  
+    <div class="pagenation">
+        {{ $all_users->links('vendor.pagination.default') }}
     </div>
 </div>
 @endsection

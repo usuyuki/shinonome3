@@ -299,6 +299,14 @@
                                 <a href="/release">リリースノート</a>
                             </li>
                         </div>
+
+                        <div class="right-menu-content">
+                            <li>
+                                <a href="/users">ユーザー一覧</a>
+                            </li>
+                        </div>
+
+
                         <div class="right-menu-content">
                             <li>
                                 <p>copyright 2020 usuyuki.</p>
