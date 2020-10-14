@@ -17,6 +17,9 @@
 
 
 {{-- @include('components.release_message',['ver'=>'0','date'=>'2020.','exp1'=>'・','exp2'=>'・','exp3'=>'・','exp4'=>'・',]) --}}
+@include('components.release_message',['ver'=>'0.7','date'=>'2020.10','exp1'=>'・スマートフォン向け表示に対応しました','exp2'=>'・','exp3'=>'・','exp4'=>'・',])
+
+
 @include('components.release_message',['ver'=>'0.6','date'=>'2020.10.13','exp1'=>'・ユーザー一覧ページの追加','exp2'=>'・各個人のユーザーページの追加','exp3'=>'・技術的なアップデート(一部ページでSassの導入)','exp4'=>'',])
 
 @include('components.release_message',['ver'=>'0.51','date'=>'2020.10.12','exp1'=>'・ログアウトできないバクの修正ができていなかったので一時的に利用を廃止','exp2'=>'・いいね機能の一時停止','exp3'=>'・投稿削除機能の一時停止','exp4'=>'',])

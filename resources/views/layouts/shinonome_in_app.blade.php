@@ -20,7 +20,7 @@
     <title>@yield('title')</title>
     <meta name="description" content="しののめは朝に特化した朝限定のSNSです。" />
     
-    <!-- CSS書くときのおまじない -->
+    <!-- レスポンシブデザインのためのビューポート -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- ファビコン -->
     <meta name="msapplication-square70x70logo" content="/img/favicons/site-tile-70x70.png">
@@ -75,6 +75,16 @@
 {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <!-- JS読み込み -->
     <script type="text/javascript" src="/js/shinonomeapp.js"></script>
+<!-- ハンバーガーメニュー用 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('.Toggle').click(function() {
+                $(this).toggleClass('active');
+                $('.menu').toggleClass('open');
+            });
+        });
+    </script>
 
     <!-- Googleフォント-->
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
@@ -89,12 +99,41 @@
 </head>
 
 <body>
-
-
-
+    
+    
     <div class="container">
         <!-- 中央 -->
         <main class="main">
+            <!-- スマホページのためのハンバーガーメニュー --> 
+            <div class="hamburger ">
+                <nav>
+                 <div class="drawer">
+                 <!--- いわゆるロゴ ------>
+                   <div id="logo"><a href="/"><img src="/img/logos/しののめロゴ20200924.png" width="150px" height="32px" class="logo" alt="しののめのロゴです">
+                   </a></div>
+                   <!--- いわゆるロゴ ------>
+                 
+                    <!-- ハンバーガーメニュー部分 --> 
+                    <div class="Toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </div>
+                </div>
+                 <!-------------- drawer ここまで-->
+                 
+                 <div class="menu">
+                  <ul>
+                   <li><a href="/privacypolicy">プライバシーポリシー</a></li>
+                   <li><a href="/explain">ご利用にあたって</a></li>
+                   <li><a href="/">しののめについて</a></li>
+                   <li><a href="#">access</a></li>
+                  </ul>
+                 </div>
+                </nav>
+            </div>
+
+            
             <!-- メインコンテンツ -->
             @yield('content')
         </main>
@@ -314,6 +353,7 @@
                         </div>
                     </ul>
                 </div>
+
 
 
 

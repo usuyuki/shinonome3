@@ -118,5 +118,6 @@
 
 <div class="aboutday">
     <h1>今日は何の日</h1>
+    <p>追加予定</p>
 </div>
 @endsection

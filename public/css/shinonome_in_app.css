@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+.d-none {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .d-md-block {
+    display: block;
+  }
+}
+
 /* 左サイドバー */
 
 .left_sidebar {
@@ -23,6 +39,12 @@
   /* width: 300px;
   background-color: green; */
   /* align-self: stretch; */
+}
+
+@media screen and (max-width: 900px) {
+  .left_sidebar {
+    display: none;
+  }
 }
 
 .left_sidebar__item {
@@ -162,6 +184,22 @@
   text-decoration: none;
 }
 
+.d-none {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .d-md-block {
+    display: block;
+  }
+}
+
 /* 右サイドバー */
 
 .right_sidebar {
@@ -175,6 +213,12 @@
   position: sticky;
   /* //固定*/
   top: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .right_sidebar {
+    display: none;
+  }
 }
 
 .right_sidebar__item {
@@ -255,6 +299,22 @@
   width: 70%;
 }
 
+.d-none {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .d-md-block {
+    display: block;
+  }
+}
+
 /* メインコンテンツ */
 
 .main {
@@ -284,6 +344,140 @@
 
 .main-explain {
   text-align: center;
+}
+
+.d-none {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .d-md-block {
+    display: block;
+  }
+}
+
+/*ここからはスマホ用→https://cocohp.com/8027/より*/
+
+/*ロゴの大きさを調整*/
+
+#logo img {
+  max-width: 50%;
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+  position: relative;
+  background: #f6f6f6;
+}
+
+.drawer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 70px;
+  padding: 0 1em;
+}
+
+/*ナビゲーション部分*/
+
+.menu ul li a {
+  display: block;
+  font-weight: bold;
+  padding: 2em;
+  border-bottom: 1px dotted #ccc;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: orange;
+}
+
+.menu {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.5s ease;
+  /*滑らかに表示*/
+  -webkit-transform: translateX(100%);
+  /*画面より100%外へ押し出し非表示にさせる*/
+  /*  transform: translateX(-100%);/*右から出す場合は、マイナス100%としてください*/
+}
+
+/*OPEN時の動き*/
+
+.menu.open {
+  transform: translateX(0%);
+  /*メニューを元の位置へ戻す*/
+}
+
+/*トグルボタンのスタイルを指定*/
+
+.Toggle {
+  display: block;
+  position: fixed;
+  /* bodyに対しての絶対位置指定 */
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 3;
+  right: 15px;
+}
+
+.Toggle span {
+  display: block;
+  position: absolute;
+  width: 50px;
+  border-bottom: solid 4px #333;
+  /*変化の速度を指定*/
+  /*変化の速度を指定*/
+  transition: 0.35s ease-in-out;
+  /*変化の速度を指定*/
+}
+
+/*各ボーダー少しずつずらす*/
+
+.Toggle span:nth-child(1) {
+  top: 5px;
+}
+
+.Toggle span:nth-child(2) {
+  top: 18px;
+}
+
+.Toggle span:nth-child(3) {
+  top: 32px;
+}
+
+.Toggle.active span:nth-child(1) {
+  top: 18px;
+  /* 1番目のspanをマイナス45度に */
+  transform: rotate(-45deg);
+}
+
+/* 2番目と3番目のspanを45度に */
+
+.Toggle.active span:nth-child(2),
+.Toggle.active span:nth-child(3) {
+  top: 18px;
+  transform: rotate(45deg);
+}
+
+/*----------------------------------ここからPCモニターの記述-----------*/
+
+@media screen and (min-width: 600px) {
+  .hamburger {
+    display: none;
+  }
 }
 
 /* imgタグの中にクラスする */
