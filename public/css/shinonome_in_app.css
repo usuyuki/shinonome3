@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+.d-none {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .d-md-block {
+    display: block;
+  }
+}
+
 /* 左サイドバー */
 
 .left_sidebar {
@@ -162,6 +178,22 @@
   text-decoration: none;
 }
 
+.d-none {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .d-md-block {
+    display: block;
+  }
+}
+
 /* 右サイドバー */
 
 .right_sidebar {
@@ -255,6 +287,22 @@
   width: 70%;
 }
 
+.d-none {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .d-md-block {
+    display: block;
+  }
+}
+
 /* メインコンテンツ */
 
 .main {
@@ -284,6 +332,194 @@
 
 .main-explain {
   text-align: center;
+}
+
+.d-none {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .d-md-block {
+    display: block;
+  }
+}
+
+/*----------------------------------ハンバーガー参考→https://qiita.com/super-mana-chan/items/0310e3543bd1c3e4761a-----------*/
+
+/*ドロワー*/
+
+.l-drawer {
+  position: relative;
+}
+
+.l-drawer__logo {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  float: left;
+  border-bottom: 1px solid black;
+}
+
+.l-drawer__checkbox {
+  display: none;
+}
+
+.l-drawer__icon {
+  cursor: pointer;
+  display: block;
+  width: 56px;
+  height: 60px;
+  position: fixed;
+  right: 0;
+}
+
+.l-drawer__icon-parts,
+.l-drawer__icon-parts:before,
+.l-drawer__icon-parts:after {
+  background-color: #000;
+  display: block;
+  width: 26px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.l-drawer__icon-parts:before,
+.l-drawer__icon-parts:after {
+  content: " ";
+}
+
+.l-drawer__icon-parts:before {
+  top: 16px;
+}
+
+.l-drawer__icon-parts:after {
+  top: -16px;
+}
+
+.l-drawer__overlay {
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.l-drawer__menu {
+  background: #ffffff;
+  color: #000;
+  max-width: 100%;
+  width: 320px;
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  top: 0;
+  right: -320px;
+}
+
+.l-drawer__icon {
+  z-index: 4;
+}
+
+.l-drawer__menu {
+  z-index: 3;
+}
+
+.l-drawer__overlay {
+  z-index: 2;
+}
+
+.l-drawer__checkbox:checked ~ .l-drawer__icon .l-drawer__icon-parts {
+  background: transparent;
+}
+
+.l-drawer__checkbox:checked ~ .l-drawer__icon .l-drawer__icon-parts:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.l-drawer__checkbox:checked ~ .l-drawer__icon .l-drawer__icon-parts:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.l-drawer__checkbox:checked ~ .l-drawer__overlay {
+  opacity: 0.3;
+  pointer-events: auto;
+}
+
+.l-drawer__checkbox:checked ~ .l-drawer__menu {
+  right: 0;
+}
+
+.l-drawer__icon-parts,
+.l-drawer__icon-parts:after,
+.l-drawer__icon-parts:before,
+.l-drawer__overlay,
+.l-drawer__menu {
+  transition: all 0.7s;
+}
+
+.main {
+  position: relative;
+  /*←相対位置*/
+}
+
+.bottom_menu {
+  position: fixed;
+  /*←絶対位置*/
+  bottom: 0;
+  /*下に固定*/
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.bottom_menu__icon {
+  width: 10%;
+  float: left;
+  margin: 0 4%;
+}
+
+/*----------------------------------スマホ用メニュー-----------*/
+
+@media screen and (max-width: 767px) {
+  .right_sidebar {
+    display: none;
+  }
+
+  .left_sidebar {
+    display: none;
+  }
+}
+
+/*----------------------------------ここからPCモニターの記述-----------*/
+
+@media screen and (min-width: 768px) {
+  .l-drawer {
+    display: none;
+  }
+
+  .bottom_menu {
+    display: none;
+  }
 }
 
 /* imgタグの中にクラスする */

@@ -22,6 +22,7 @@
 
         width: 60%;
         height: auto;
+        margin:0 auto;
 
     }
 
