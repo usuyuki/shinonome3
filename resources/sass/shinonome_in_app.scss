@@ -8,113 +8,171 @@
 
 @import "responsive";
 
-/*ここからはスマホ用→https://cocohp.com/8027/より*/
+/*----------------------------------ハンバーガー参考→https://qiita.com/super-mana-chan/items/0310e3543bd1c3e4761a-----------*/
+/*ドロワー*/
+.l-drawer {
+    position: relative;
+    // inputのcheckboxは非表示
+    &__logo {
+        width: 100%;
+        text-align: center;
+        // border: 1px solid black;
+        margin: 0 auto;
+        float: left;
+        border-bottom: 1px solid black;
+    }
+    &__checkbox {
+        display: none;
+    }
+    // ハンバーガーアイコン
+    &__icon {
+        cursor: pointer;
+        display: block;
+        width: 56px;
+        height: 60px;
+        position: fixed;
+        right: 0;
+        // ハンバーガーアイコンの中の線
+        &-parts,
+        &-parts:before,
+        &-parts:after {
+            background-color: #000;
+            display: block;
+            width: 26px;
+            height: 2px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        &-parts:before,
+        &-parts:after {
+            content: " ";
+        }
+        &-parts:before {
+            top: 16px;
+        }
+        &-parts:after {
+            top: -16px;
+        }
+    }
 
-/*ロゴの大きさを調整*/
-#logo img {
-    max-width: 50%;
+    // ドロワーメニュー開いた時のメインエリアを暗く
+    &__overlay {
+        background: #000;
+        opacity: 0;
+        pointer-events: none; //ポインタの動作全部無効化
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+
+    // ドロワーメニュー
+    &__menu {
+        background: #ffffff;
+        color: #000;
+        max-width: 100%;
+        width: 320px;
+        height: 100vh;
+        overflow-y: auto; //スクロール
+        -webkit-overflow-scrolling: touch; //スクロール（SP）
+        position: fixed;
+        top: 0;
+        right: -320px;
+    }
+    // z-indexの指定（1がメインエリア）
+    &__icon {
+        z-index: 4;
+    }
+    &__menu {
+        z-index: 3;
+    }
+    &__overlay {
+        z-index: 2;
+    }
+
+    // チェックが入ったら（アイコンクリックしたら）
+    &__checkbox:checked ~ {
+        // ハンバーガーアイコン
+        .l-drawer__icon {
+            .l-drawer__icon-parts {
+                background: transparent;
+            }
+            .l-drawer__icon-parts:before {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                top: 0;
+            }
+            .l-drawer__icon-parts:after {
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                top: 0;
+            }
+        }
+        // メインエリアを暗くする
+        .l-drawer__overlay {
+            opacity: 0.3;
+            pointer-events: auto; //ポインタの動作デフォルトに戻す
+        }
+        // メニューをだす
+        .l-drawer__menu {
+            right: 0;
+        }
+    }
+    // 動きをスムーズに
+    &__icon-parts,
+    &__icon-parts:after,
+    &__icon-parts:before,
+    &__overlay,
+    &__menu {
+        -webkit-transition: all 0.7s;
+        transition: all 0.7s;
+    }
 }
-
-nav {
+.main{
+    position: relative;/*←相対位置*/
+}
+.bottom_menu {
+    // 固定
+    position: fixed;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+    margin: 0 auto;
     width: 100%;
-    height: 70px;
-    position: relative;
-    background: #f6f6f6;
-}
-
-.drawer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    height: 70px;
-    padding: 0 1em;
-}
-
-/*ナビゲーション部分*/
-
-.menu ul li a {
-    display: block;
-    font-weight: bold;
-    padding: 2em;
-    border-bottom: 1px dotted #ccc;
-    color: #333;
-    text-decoration: none;
-}
-
-.menu ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: orange;
-}
-
-.menu {
+    height:80px;
+    border: 1px solid black;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    transition: 0.5s ease; /*滑らかに表示*/
-    -webkit-transform: translateX(
-        100%
-    ); /*画面より100%外へ押し出し非表示にさせる*/
-
-    /*  transform: translateX(-100%);/*右から出す場合は、マイナス100%としてください*/
+    background-color: #ffffff;
+    &__icon {
+    // border: 1px solid black;
+    width:10%;
+    float: left;
+    margin: 0 4%;
+    
+    }
 }
 
-/*OPEN時の動き*/
-.menu.open {
-    -webkit-transform: translateX(0%);
-    transform: translateX(0%); /*メニューを元の位置へ戻す*/
-}
-
-/*トグルボタンのスタイルを指定*/
-.Toggle {
-    display: block;
-    position: fixed; /* bodyに対しての絶対位置指定 */
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    z-index: 3;
-    right: 15px;
-}
-
-.Toggle span {
-    display: block;
-    position: absolute;
-    width: 50px;
-    border-bottom: solid 4px #333;
-    -webkit-transition: 0.35s ease-in-out; /*変化の速度を指定*/
-    -moz-transition: 0.35s ease-in-out; /*変化の速度を指定*/
-    transition: 0.35s ease-in-out; /*変化の速度を指定*/
-}
-/*各ボーダー少しずつずらす*/
-.Toggle span:nth-child(1) {
-    top: 5px;
-}
-.Toggle span:nth-child(2) {
-    top: 18px;
-}
-.Toggle span:nth-child(3) {
-    top: 32px;
-}
-.Toggle.active span:nth-child(1) {
-    top: 18px;
-    /* 1番目のspanをマイナス45度に */
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-/* 2番目と3番目のspanを45度に */
-.Toggle.active span:nth-child(2),
-.Toggle.active span:nth-child(3) {
-    top: 18px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    transform: rotate(45deg);
+/*----------------------------------スマホ用メニュー-----------*/
+@include mq-down() {
+    // 引数を省略（初期値はmdの768px） downはそれ以下ならということ
+    .right_sidebar {
+        display: none;
+    }
+    .left_sidebar {
+        display: none;
+    }
 }
 
 /*----------------------------------ここからPCモニターの記述-----------*/
-@media screen and (min-width: 600px) {
-    .hamburger {
+@include mq-up() {
+    // 引数を省略（初期値はmdの768px） upはそれ以上ならということ
+    .l-drawer {
+        display: none;
+    }
+    .bottom_menu {
         display: none;
     }
 }

@@ -4,13 +4,13 @@
   display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 768px) {
   .d-md-none {
     display: none;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 768px) {
   .d-md-block {
     display: block;
   }
@@ -39,12 +39,6 @@
   /* width: 300px;
   background-color: green; */
   /* align-self: stretch; */
-}
-
-@media screen and (max-width: 900px) {
-  .left_sidebar {
-    display: none;
-  }
 }
 
 .left_sidebar__item {
@@ -188,13 +182,13 @@
   display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 768px) {
   .d-md-none {
     display: none;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 768px) {
   .d-md-block {
     display: block;
   }
@@ -213,12 +207,6 @@
   position: sticky;
   /* //固定*/
   top: 0;
-}
-
-@media screen and (max-width: 900px) {
-  .right_sidebar {
-    display: none;
-  }
 }
 
 .right_sidebar__item {
@@ -303,13 +291,13 @@
   display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 768px) {
   .d-md-none {
     display: none;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 768px) {
   .d-md-block {
     display: block;
   }
@@ -350,132 +338,186 @@
   display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 768px) {
   .d-md-none {
     display: none;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 768px) {
   .d-md-block {
     display: block;
   }
 }
 
-/*ここからはスマホ用→https://cocohp.com/8027/より*/
+/*----------------------------------ハンバーガー参考→https://qiita.com/super-mana-chan/items/0310e3543bd1c3e4761a-----------*/
 
-/*ロゴの大きさを調整*/
+/*ドロワー*/
 
-#logo img {
-  max-width: 50%;
+.l-drawer {
+  position: relative;
 }
 
-nav {
+.l-drawer__logo {
   width: 100%;
-  height: 70px;
-  position: relative;
-  background: #f6f6f6;
-}
-
-.drawer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  height: 70px;
-  padding: 0 1em;
-}
-
-/*ナビゲーション部分*/
-
-.menu ul li a {
-  display: block;
-  font-weight: bold;
-  padding: 2em;
-  border-bottom: 1px dotted #ccc;
-  color: #333;
-  text-decoration: none;
-}
-
-.menu ul li a:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: orange;
-}
-
-.menu {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.5);
-  transition: 0.5s ease;
-  /*滑らかに表示*/
-  -webkit-transform: translateX(100%);
-  /*画面より100%外へ押し出し非表示にさせる*/
-  /*  transform: translateX(-100%);/*右から出す場合は、マイナス100%としてください*/
+  margin: 0 auto;
+  float: left;
+  border-bottom: 1px solid black;
 }
 
-/*OPEN時の動き*/
-
-.menu.open {
-  transform: translateX(0%);
-  /*メニューを元の位置へ戻す*/
+.l-drawer__checkbox {
+  display: none;
 }
 
-/*トグルボタンのスタイルを指定*/
-
-.Toggle {
-  display: block;
-  position: fixed;
-  /* bodyに対しての絶対位置指定 */
-  width: 42px;
-  height: 42px;
+.l-drawer__icon {
   cursor: pointer;
-  z-index: 3;
-  right: 15px;
-}
-
-.Toggle span {
   display: block;
+  width: 56px;
+  height: 60px;
+  position: fixed;
+  right: 0;
+}
+
+.l-drawer__icon-parts,
+.l-drawer__icon-parts:before,
+.l-drawer__icon-parts:after {
+  background-color: #000;
+  display: block;
+  width: 26px;
+  height: 2px;
   position: absolute;
-  width: 50px;
-  border-bottom: solid 4px #333;
-  /*変化の速度を指定*/
-  /*変化の速度を指定*/
-  transition: 0.35s ease-in-out;
-  /*変化の速度を指定*/
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
 }
 
-/*各ボーダー少しずつずらす*/
-
-.Toggle span:nth-child(1) {
-  top: 5px;
+.l-drawer__icon-parts:before,
+.l-drawer__icon-parts:after {
+  content: " ";
 }
 
-.Toggle span:nth-child(2) {
-  top: 18px;
+.l-drawer__icon-parts:before {
+  top: 16px;
 }
 
-.Toggle span:nth-child(3) {
-  top: 32px;
+.l-drawer__icon-parts:after {
+  top: -16px;
 }
 
-.Toggle.active span:nth-child(1) {
-  top: 18px;
-  /* 1番目のspanをマイナス45度に */
+.l-drawer__overlay {
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.l-drawer__menu {
+  background: #ffffff;
+  color: #000;
+  max-width: 100%;
+  width: 320px;
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  top: 0;
+  right: -320px;
+}
+
+.l-drawer__icon {
+  z-index: 4;
+}
+
+.l-drawer__menu {
+  z-index: 3;
+}
+
+.l-drawer__overlay {
+  z-index: 2;
+}
+
+.l-drawer__checkbox:checked ~ .l-drawer__icon .l-drawer__icon-parts {
+  background: transparent;
+}
+
+.l-drawer__checkbox:checked ~ .l-drawer__icon .l-drawer__icon-parts:before {
   transform: rotate(-45deg);
+  top: 0;
 }
 
-/* 2番目と3番目のspanを45度に */
-
-.Toggle.active span:nth-child(2),
-.Toggle.active span:nth-child(3) {
-  top: 18px;
+.l-drawer__checkbox:checked ~ .l-drawer__icon .l-drawer__icon-parts:after {
   transform: rotate(45deg);
+  top: 0;
+}
+
+.l-drawer__checkbox:checked ~ .l-drawer__overlay {
+  opacity: 0.3;
+  pointer-events: auto;
+}
+
+.l-drawer__checkbox:checked ~ .l-drawer__menu {
+  right: 0;
+}
+
+.l-drawer__icon-parts,
+.l-drawer__icon-parts:after,
+.l-drawer__icon-parts:before,
+.l-drawer__overlay,
+.l-drawer__menu {
+  transition: all 0.7s;
+}
+
+.main {
+  position: relative;
+  /*←相対位置*/
+}
+
+.bottom_menu {
+  position: fixed;
+  /*←絶対位置*/
+  bottom: 0;
+  /*下に固定*/
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.bottom_menu__icon {
+  width: 10%;
+  float: left;
+  margin: 0 4%;
+}
+
+/*----------------------------------スマホ用メニュー-----------*/
+
+@media screen and (max-width: 767px) {
+  .right_sidebar {
+    display: none;
+  }
+
+  .left_sidebar {
+    display: none;
+  }
 }
 
 /*----------------------------------ここからPCモニターの記述-----------*/
 
-@media screen and (min-width: 600px) {
-  .hamburger {
+@media screen and (min-width: 768px) {
+  .l-drawer {
+    display: none;
+  }
+
+  .bottom_menu {
     display: none;
   }
 }

@@ -22,11 +22,6 @@
     /* width: 300px;
 background-color: green; */
     /* align-self: stretch; */
-
-    @include mq() {
-        // 引数を省略（初期値はmdの768px）
-        display: none;
-    }
 }
 
 .left_sidebar__item {

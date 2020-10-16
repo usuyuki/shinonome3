@@ -16,10 +16,16 @@ class GreetController extends Controller
 
     public function allShowGreetPage()
     {
-        $greets = Greet::latest()->get();
-        // $user = User::where('id', '=', $greets->user_id)->first();
+        $timelines = Greet::latest()->get();
+        $user = User::latest()->get();
 
-        return view('main.left.greet', ['greets' => $greets,]);
+        return view('main.left.greet', [
+            'user'      => $user,
+            'timelines' => $timelines
+        ]);
+
+
+        return view('main.left.greet_all', ['greets' => $greets,]);
     }
 
     public function postGreet(Request $request)
@@ -41,6 +47,7 @@ class GreetController extends Controller
     // 一覧表示
     public function showGreetPage(Greet $greet, Follower $follower)
     {
+        //ログインしているユーザー探す
         $user = auth()->user();
         $follow_ids = $follower->followingIds($user->id);
         // followed_idだけ抜き出す

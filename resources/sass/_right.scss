@@ -13,10 +13,6 @@
     /* //固定*/
     // border: 1px solid black;
     top: 0;
-    @include mq() {
-        // 引数を省略（初期値はmdの768px）
-        display: none;
-    }
 }
 
 .right_sidebar__item {

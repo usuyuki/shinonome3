@@ -74,7 +74,7 @@
 
 
     <div class="main-title">
-        <h1><span class="orange-line">あいさつ</span></h1>
+        <h1><span class="orange-line">あいさつ(全ユーザー)</span></h1>
     </div>
     <p>　</p>
     <!-- 投稿コーナー -->
