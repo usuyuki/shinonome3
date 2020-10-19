@@ -182,8 +182,8 @@
                     <li>
 
 
-                        {{-- <a href="/greet"> --}}
-                        <a href="/greet/all">
+                        <a href="/greet">
+                        {{-- <a href="/greet/all"> --}}
                             <div class="bottom_menu__icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40">
                                     <path d="M0 0h24v24H0z" fill="none" />
@@ -288,8 +288,8 @@
                         <li>
                             <div class="left-menu-content">
 
-                                {{-- <a href="/greet"> --}}
-                                <a href="/greet/all">
+                                <a href="/greet">
+                                {{-- <a href="/greet/all"> --}}
                                     <div class="menu-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24"
                                             width="40">
