@@ -185,9 +185,8 @@
                     @slot('like_btn')
                         <!-- いいねコーナー -->
                         <div class="d-flex align-items-center">
-                            <blade
-                                if|%20(!in_array(%24user-%3Eid%2C%20array_column(%24timeline-%3Efavorites-%3EtoArray()%2C%20%26%2339%3Buser_id%26%2339%3B)%2C%20TRUE))%0D>
-                                <form method="POST" action='/favorites/' class="mb-0">
+                            @if (!in_array($user->id, array_column($timeline->favorites->toArray(), 'user_id'), TRUE))
+                            <form method="POST" action='/favorites/' class="mb-0">
                                     @csrf
 
                                     <input type="hidden" name="greet_id" value="{{ $timeline->id }}">
