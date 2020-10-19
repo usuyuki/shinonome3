@@ -18,7 +18,7 @@ class CreateGreetsTable extends Migration
             $table->unsignedInteger('user_id')->comment('ユーザID');
             $table->string('name')->nullable()->comment('ユーザ名');
 
-            $table->text('greet',200)->comment('本文');
+            $table->string('greet')->comment('本文');
             //↓これでdeleted atを追加
             $table->softDeletes();
 
