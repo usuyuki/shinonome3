@@ -88,5 +88,12 @@ function showClock_main_UTC() {
         "</span>";
     document.getElementById("Watch_main_UTC").innerHTML = msg;
 }
+
+
+
+
+
+
+
 setInterval("showClock_main_UTC()", 1000);
-// ここまで
+
